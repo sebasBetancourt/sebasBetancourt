@@ -7,10 +7,10 @@
 }
 
 body{
-    background: linear-gradient(360deg,rgba(30, 100, 133, 1) -176%, rgba(0, 0, 0, 1) 46%, rgba(13, 100, 117, 1) 219%);
+    background: linear-gradient(360deg,rgba(13, 100, 117, 1) -119%, rgba(0, 0, 0, 1) 46%, rgba(13, 100, 117, 1) 219%);
     background-size: cover, auto;
     background-repeat: no-repeat, repeat;
-    min-height: 100vh;
+    min-height: 300vh;
     width: 100%;
 }
 
@@ -20,14 +20,14 @@ header{
     width: 100%;
     justify-items: center;
     align-content: center;
-    padding: 6px;
+    padding: 3%;
 }
 nav {
     background: hsl(0deg 0% 100% / 8%);
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
-    width: 35%;
+    width: 30em;
     border-radius: 20px;
 }
 
@@ -85,18 +85,89 @@ main{
 }
 
 .section__home{
-  padding: 9em;
+  justify-self: center;
+  width: 80vw;
+  height: 95vh;
+  padding: 5em 0 0 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items:center;
+  border-bottom: 2px solid white;
 }
-.article__title{
-    background: green;
-    width: 40vw;
+
+.article__title {
+    width: 35em;
+    height: 25em;
     margin-right: 6.5%;
-}
+    text-align: left;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+.typeWriter {
+    font-family: 'SpaceGrotesk-SemiBold';
+    font-size: 3em;
+    color: #ffffff;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .cursor {
+    display: inline-block;
+    border-right: none;
+    animation: blink 1.5s step-end infinite;
+    color: white;
+    font-weight: bold;
+  }
+  
+  @keyframes blink {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
 .buttonAboutMore{
-    width: 20vw;
-    background: red;
+    width: 13em;
+    height: 3em;
+    border-radius: 35px;
+    text-align: center;
+    align-content: center;
+    background: #ffffffc7;
     margin-right: 10%;
+    text-decoration: none;
+    font-family: 'SpaceGrotesk-Medium';
+    font-size: 1.3em;
+    color: black;
+    text-shadow: 2px 2px 6px rgb(99, 95, 95);
+}
+.buttonAboutMore:hover{
+    background: #ffffff8a;
+}
+.div__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 3em;
+}
+
+.linkContent{
+    width: 40%;
+    display: flex;
+    gap: 9%;
+}
+.linkContent a{
+    text-decoration: none;
+}
+.div__content p{
+    font-family: 'SpaceGrotesk-Light';
+    font-size: 1.2em;
+    color: white;
 }
