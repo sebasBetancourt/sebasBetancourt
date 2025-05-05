@@ -94,7 +94,10 @@ export const navegation = ()=>{
           info.innerHTML = `<p>Error al cargar datos: ${error.message}</p>`;
         }
       }
+      
   
       cargarDatos();  
+
+
       
 };
