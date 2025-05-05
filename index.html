@@ -5,24 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebastian Betancourt | Portafolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
+    <script type="module" defer src="js/main.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#Home"><img src="/storage/img/home.svg"></a></li>
-                <li><a href="#Skills"><img src="/storage/img/tools.svg"></a></li>
-                <li><a href="#Projects"><img src="/storage/img/projects.svg"></a></li>
-                <li><a href="#Education"><img src="/storage/img/education.svg"></a></li>
-                <li><a href="#Contact"><img src="/storage/img/contact.svg"></a></li>
+        <nav id="nav">
+            <ul class="nav__ul" id="navRedirection">
+                <li id="navLi"><a title="Home" id="navA" href="#Home"><img src="/storage/img/home.svg"></a></li>
+                <li id="navLi"><a title="About" id="navA" href="#About"><img src="/storage/img/aabout.svg"></a></li>
+                <li id="navLi"><a title="Skills" id="navA" href="#Skills"><img src="/storage/img/tools.svg"></a></li>
+                <li id="navLi"><a title="Projects" id="navA" href="#Projects"><img src="/storage/img/projects.svg"></a></li>
+                <li id="navLi"><a title="Education" id="navA" href="#Education"><img src="/storage/img/education.svg"></a></li>
+                <li id="navLi"><a title="Contact" id="navA" href="#Contact"><img src="/storage/img/contact.svg"></a></li>
             </ul>
-            <button><img src="/storage/img/light_mode.svg"></button>
+            <button class="buttonLight" id="lightMode"><img src="/storage/img/light_mode.svg"></button>
         </nav>
     </header>
 
 
-    <main></main>
+    <main>
+        <section class="section__home">
+            <article class="article__title">
+                <div class="div__profile">
+                    <img src="#">
+                    <h1>Sebastian Betancourt</h1>
+                </div>
+                <p>Hi, I am Sebastian Betancourt. A Software Developer Fullstack.</p>
+            </article>
+
+            <div class="buttonAboutMore">
+                <a href="#About">Get me Know More</a>
+            </div>
+            
+            <div class="div__content">
+                <div class="linkContent">
+                    <a href="#"><img src="storage/img/github.svg" alt="GitHub"></a>
+                    <a href="#"><img src="storage/img/linkedln.svg" alt="Linked"></a>
+                    <a href="#">Curriculum Vitale <img src="#" alt="Hoja de vida"></a>
+                </div>
+                <p>Hora Latest Ubication Real</p>
+            </div>
+        </section>
+    </main>
 
     <footer></footer>
 </body>
