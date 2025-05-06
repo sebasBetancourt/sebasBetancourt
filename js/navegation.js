@@ -31,7 +31,7 @@ export const navegation = ()=>{
 
 
     //Efect article letters
-    const text = "Hi, I am Sebastian Betancourt. A Software DEVELOPER Fullstack.";
+    const text = "Hi, I am Sebastian Betancourt. Software DEVELOPER.";
     const typedText = document.getElementById("typedText");
 
     let i = 0;
@@ -45,7 +45,7 @@ export const navegation = ()=>{
           setTimeout(typeWriter, 60);
         } else {
           isDeleting = true;
-          setTimeout(typeWriter, 1500);
+          setTimeout(typeWriter, 3500);
         }
       } else {
         i--;
@@ -54,7 +54,7 @@ export const navegation = ()=>{
           setTimeout(typeWriter, 50);
         } else {
           isDeleting = false;
-          setTimeout(typeWriter, 500);
+          setTimeout(typeWriter, 1500);
         }
       }
     }
