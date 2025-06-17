@@ -30,7 +30,6 @@ export const navegation = ()=>{
     });
 
 
-    //Efect article letters
     const text = "Hi, I am Sebastian Betancourt. Software DEVELOPER.";
     const typedText = document.getElementById("typedText");
 
