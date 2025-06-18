@@ -13,6 +13,7 @@ export const gsapScroll = ()=>{
       rotate: 0,
       y: 0,
       opacity: 1,
+      ease: "power3.out",
     });
 
     gsap.utils.toArray(".project").forEach((proj, i) => {
@@ -26,6 +27,7 @@ export const gsapScroll = ()=>{
         scale: 1,
         rotate: 0,
         delay: i * 0.05,
+        ease: "power2.out"
       });
     });
 }

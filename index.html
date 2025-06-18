@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.globe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <link rel="icon" href="storage/img/icon.png">
 
 </head>
@@ -166,8 +167,70 @@
         </section>
 
 
-        <section id="Education" class="Education"></section>
-        <section id="Contact" class="Contact"></section>
+        <section id="Education" class="Education">
+            <h2>Education</h2>
+            <div class="educationWrapper">
+                <a target="_blank" href="https://campuslands.com/" class="boxEducation">
+                    <img src="./storage/img/campusLandsIcon.png" alt="CampusLands Logo" />
+                    <div>
+                        <h4>CampusLands</h4>
+                        <p>
+                            Formación intensiva en desarrollo web fullstack con un fuerte enfoque en proyectos del mundo real y aprendizaje práctico utilizando herramientas y tecnologías modernas. Durante el programa, adquirí experiencia práctica en trabajo colaborativo a través de la metodología Scrum y desarrollé habilidades blandas esenciales como puntualidad, responsabilidad y comunicación efectiva dentro de un equipo. Este proceso exigente marcó un punto de inflexión en mi camino como programador, llevando mis habilidades al siguiente nivel.
+                        </p>
+                    </div>
+                </a>
+                <a target="_blank" href="https://www.sena.edu.co/es-co/Paginas/default.aspx" class="boxEducation">
+                    <img src="./storage/img/sena.png" alt="SENA Logo" />
+                    <div>
+                        <h4>Técnico en Programación de Software – SENA</h4>
+                        <p>
+                            Programa de formación técnica de dos años enfocado en el desarrollo de software a través de proyectos del mundo real. Durante este tiempo, mejoré significativamente mi lógica de programación y fortalecí mis habilidades técnicas, especialmente en desarrollo web. Esta experiencia sentó una base sólida para mi crecimiento como desarrollador.
+                        </p>
+                    </div>
+                  
+                </a>
+            </div>
+        </section>
+
+        
+
+        <section id="Contact" class="Contact">
+          <div class="contact-wrapper">
+              <h2>¡Connect with me!</h2>
+              <div class="contact-form">
+                  <h3>Send a Message</h3>
+                  <form id="contactForm">
+                      <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" id="name" name="name" placeholder="Your Name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" id="email" name="email" placeholder="@gmail.com" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" name="message" placeholder="..." required></textarea>
+                      </div>
+                      <button type="submit">Submit Message</button>
+                  </form>
+                  <p id="formMessage" class="hidden"></p>
+              </div>
+
+              <div class="contact-info">
+                  <h3>Contact Me</h3>
+                  <p><strong>Email:</strong> <a href="mailto:s3basbetan@gmail.com">s3basbetan@gmail.com</a></p>
+                  <p><strong>Phone:</strong> <a href="tel:+57 3024341150">+57 3024341150</a></p>
+
+                  <p><strong>Social networks:</strong></p>
+                  <div class="social-links">
+                      <a href="https://www.linkedin.com/in/sebastian-betancourt-605654293/" target="_blank">
+                          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.479-2.25-1.677-2.25-1.152 0-1.838.775-2.141 1.523-.11.268-.138.567-.138.896v5.435h-3s.04-9.847 0-10.865h3v1.539c.399-.615 1.111-1.496 2.704-1.496 1.975 0 3.454 1.296 3.454 4.085v6.737z"/></svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+        </section>
         
         
         

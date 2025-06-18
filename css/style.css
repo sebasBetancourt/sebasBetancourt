@@ -7,7 +7,7 @@
 }
 
 body{
-    background: linear-gradient(to bottom, rgb(0 0 0) 0%, rgb(0 0 0) 40%, rgb(1 10 10) 70%, rgb(30, 42, 43) 100%);
+    background: linear-gradient(to bottom, rgb(0 0 0) 0%, rgb(0 0 0) 40%, rgb(1 10 10) 70%, rgb(0 0 0 / 95%) 100%);
     min-height: 200vh;
     width: 100%;
     z-index: 0;
@@ -438,13 +438,294 @@ a:hover {
   border: 2px solid white;
 }
 /* --------------------Education---------------------------------------------------------------- */
-.Education{
-  height: 100vh;
+
+.Education {
+    padding: 7rem 4rem;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: transparent; 
+    gap: 1.2em;
 }
+
+.Education h2 {
+    font-family: 'SpaceGrotesk-Bold';
+    font-weight: bold;
+    font-size: 3.8rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.educationWrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.boxEducation {
+    justify-self: stretch;
+    width: 45%;
+    padding: 1em;
+    background: #000000de;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    box-shadow: inset -1px 2px 20px 8px rgb(7 79 113 / 20%);
+    transition: transform 0.9s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.7s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.boxEducation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.boxEducation:hover {
+  transform: translateY(0) scale(1.05);
+  box-shadow: -1px 1px 20px 13px rgb(7 79 113 / 10%);
+}
+
+.boxEducation img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.boxEducation h4 {
+    font-family: 'SpaceGrotesk-Medium';
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0079f19e;
+}
+
+.boxEducation p {
+  font-family: "SpaceGrotesk-Regular";
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+
 /* --------------------Contact---------------------------------------------------------------- */
-.Contact{
-  height: 100vh;
-}
+
+
+
+
+
+
+#Contact {
+            padding: 7rem 4rem;
+            height: 150vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+        }
+
+        #Contact h2 {
+            font-family: 'SpaceGrotesk-Bold';
+            font-weight: bold;
+            font-size: 3.1rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-right: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        #Contact.section-animate h2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #Contact .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        #Contact .contact-form {
+            background: #000000de;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: inset -1px 2px 20px 8px rgb(7 79 113 / 20%);
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.9s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.7s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        #Contact.section-animate .contact-form {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #Contact .contact-form:hover {
+            transform: translateY(0) scale(1.05);
+            box-shadow: -1px 1px 20px 13px rgb(7 79 113 / 10%);
+        }
+
+        #Contact .contact-form h3 {
+            font-family: 'SpaceGrotesk-SemiBold';
+            font-size: 1.5rem;
+            color: #0079f19e;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        #Contact.section-animate .contact-form h3 {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #Contact .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        #Contact .form-group label {
+            display: block;
+            font-family: 'SpaceGrotesk-Medium';
+            font-size: 0.875rem;
+            color: #ffffffb4;
+            margin-bottom: 0.5rem;
+        }
+
+        #Contact .form-group input,
+        #Contact .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.375rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-family: 'SpaceGrotesk-Regular';
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        #Contact .form-group input:focus,
+        #Contact .form-group textarea:focus {
+            outline: none;
+            border-color: #0079f19e;
+            box-shadow: 0 0 0 2px rgba(7, 121, 241, 0.3);
+        }
+
+        #Contact .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        #Contact .contact-form button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #0079f19e;
+            color: #ffffff;
+            border: none;
+            border-radius: 0.375rem;
+            font-family: 'SpaceGrotesk-Medium';
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #Contact .contact-form button:hover {
+            background: #005bb5;
+        }
+
+        #Contact .contact-info {
+            text-align: center;
+            max-width: 400px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        #Contact.section-animate .contact-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #Contact .contact-info h3 {
+            font-family: 'SpaceGrotesk-SemiBold';
+            font-size: 1.5rem;
+            color: #0079f19e;
+            margin-bottom: 1.5rem;
+        }
+
+        #Contact .contact-info p {
+            font-family: 'SpaceGrotesk-Regular';
+            font-size: 1rem;
+            color: #ffffffb4;
+            margin-bottom: 1rem;
+        }
+
+        #Contact .contact-info a {
+            color: #ffffffb4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #Contact .contact-info a:hover {
+            color: #ffffff;
+        }
+
+        #Contact .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        #Contact .social-links svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: #ffffffb4;
+            transition: fill 0.3s ease;
+        }
+
+        #Contact .social-links a:hover svg {
+            fill: #ffffff;
+        }
+
+        #Contact #formMessage {
+            text-align: center;
+            margin-top: 1rem;
+            font-family: 'SpaceGrotesk-Regular';
+            font-size: 0.875rem;
+        }
+
+        #Contact .success {
+            color: #16a34a;
+        }
+
+        #Contact .error {
+            color: #dc2626;
+        }
+
+        @media (min-width: 768px) {
+            #Contact .contact-wrapper {
+                flex-direction: row;
+            }
+            #Contact .contact-form,
+            #Contact .contact-info {
+                width: 45%;
+            }
+        }
 
 
 
