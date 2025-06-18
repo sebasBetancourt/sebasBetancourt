@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebastian Betancourt | Portafolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <script type="module" defer src="js/main.js"></script>
+    <script type="module" defer src="./js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.globe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <link rel="icon" href="storage/img/icon.png">
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/Observer.min.js"></script>
 
 </head>
 <body id="body">
@@ -43,7 +43,7 @@
                 <div class="linkContent">
                     <a href="https://github.com/sebasBetancourt" target="_blank"><img src="storage/img/github.svg" alt="GitHub"></a>
                     <a href="https://www.linkedin.com/in/sebastian-betancourt-605654293/" target="_blank"><img src="storage/img/linkedln.svg" alt="Linked"></a>
-                    <a href="HV.pdf" download="HV.pdf"><img src="storage/img/download.svg" alt="Hoja de vida"></a>
+                    <a href="./HV.pdf" download="HV.pdf"><img src="storage/img/download.svg" alt="Hoja de vida"></a>
                 </div>
                 <p id="info">Cargando ubicación...</p>
             </div>
@@ -149,7 +149,23 @@
 
 
 
-        <section id="Projects" class="Projects"></section>
+        <section id="Projects" class="Projects">
+          <h2>Projects</h2>
+          <div class="projects-wrapper">
+            <div class="project">
+              <div class="boxProject"><a href="https://sebasbetancourt.github.io/criptoCoins/" target="_blank"><img loading="lazy" src="./storage/img/BiTripeProject-1.png"></a></div>
+              <div class="boxProject"><a href="https://sebasbetancourt.github.io/simple-board/" target="_blank"><img loading="lazy" src="./storage/img/simpleBoardProject.png"></a></div>
+              <div class="boxProject"><a href="https://sebasbetancourt.github.io/weather-app-redesign/" target="_blank"><img loading="lazy" src="./storage/img/logoWeather.jpeg"></a></div>
+            </div>
+            <div class="project">
+              <div class="boxProject"><a href="https://sebasbetancourt.github.io/Crae/" target="_blank"><img loading="lazy" src="./storage/img/CraeProject.png"></a></div>
+              <div class="boxProject"><a href="https://sebasbetancourt.github.io/Conciertos_conectados/" target="_blank"><img loading="lazy" src="./storage/img/conciertoProject.avif"></a></div>
+              <div class="boxProject"><a href="https://julianort11.github.io/GameCampus/" target="_blank"><img loading="lazy" src="./storage/img/gameProject.png"></a></div>
+            </div>
+          </div>
+        </section>
+
+
         <section id="Education" class="Education"></section>
         <section id="Contact" class="Contact"></section>
         

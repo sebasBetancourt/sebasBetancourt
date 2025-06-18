@@ -387,7 +387,55 @@ a:hover {
 
 /* --------------------Projects---------------------------------------------------------------- */
 .Projects{
+  width: 100%;
+  height: 300vh;
+  padding: 6rem 2rem 0 5rem;
+  position: relative;
+}
+.Projects h2{
+  font-family: 'SpaceGrotesk-Bold';
+  font-weight: bold;
+  font-size: 3.8rem;
+  color: #ffffff;
+  padding-left: 1.2rem;
+}
+
+.projects-wrapper {
+  width: 100%;
+  /* background: yellow; */
+  position: sticky;
+  top: 0;
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transform: rotate(30deg) translateY(150px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.project {
+  display: flex;
+  width: 90%;
+  height: 50%;
+  transform: scale(0.6) rotate(-10deg);
+  transition: transform 0.2s ease;
+  justify-content: space-between;
+  will-change: transform, opacity;
+}
+
+.boxProject{
+  border-radius: 2rem;
+  width: 25%;
+}
+.boxProject img{
+  width: 100%;
+  height: 90%;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(3, 20, 36, 0.548);
+  border: 2px solid white;
 }
 /* --------------------Education---------------------------------------------------------------- */
 .Education{
