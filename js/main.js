@@ -6,6 +6,7 @@ import { carouselAbout } from './carouselAbout.js';
 import { slideSkills } from './slideSkills.js';
 import { educationScroll } from './educationScroll.js';
 import { contactanos } from './contactanos.js';
+import { hamburgerMenu } from './hamburguerMenu.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   scrollAnimation();
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   slideSkills();
   contactanos()
   educationScroll();
+  hamburgerMenu();
     if (window.VANTA) {
         window.VANTA.GLOBE({
             el: "#Home",

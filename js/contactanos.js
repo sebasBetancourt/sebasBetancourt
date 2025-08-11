@@ -11,7 +11,7 @@ export const contactanos = ()=>{
                 .then(() => {
                     formMessage.textContent = '¡Mensaje enviado con éxito! Te contactaré pronto.';
                     formMessage.classList.add('success');
-                    this.reset(); // Limpiar el formulario
+                    this.reset(); 
                 }, (error) => {
                     formMessage.textContent = 'Error al enviar el mensaje. Por favor, intenta de nuevo.';
                     formMessage.classList.add('error');

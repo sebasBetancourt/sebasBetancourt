@@ -1,19 +1,30 @@
 export const carouselAbout = ()=>{
-    var init = function() {
-      var carousel = document.getElementById('carousel'),
-          navButtons = document.querySelectorAll('#navigation button'),
-          panelCount = carousel.children.length,
-          
-          theta = 0,
-          onNavButtonClick = function( event ){
-            var increment = parseInt(event.currentTarget.getAttribute('data-increment'));
-            theta += ( 360 / panelCount ) * increment;
-            carousel.style.transform = 'translateZ( -288px ) rotateY(' + theta + 'deg)';
-          };
+  const figures = document.querySelectorAll('#carousel figure');
+  const prevButton = document.querySelector('.previousAbout');
+  const nextButton = document.querySelector('.nextAbout');
+  let currentIndex = 0;
 
-      for (var i=0; i < 2; i++) {
-        navButtons[i].addEventListener( 'click', onNavButtonClick, false);
+  function showFigure(index) {
+    figures.forEach((figure, i) => {
+      figure.classList.remove('active', 'exit');
+      if (i === index) {
+        figure.classList.add('active');
+      } else if (i === currentIndex) {
+        figure.classList.add('exit');
       }
-    };
-    init();
+    });
+    currentIndex = index;
+  }
+
+  prevButton.addEventListener('click', () => {
+    const newIndex = (currentIndex - 1 + figures.length) % figures.length;
+    showFigure(newIndex);
+  });
+
+  nextButton.addEventListener('click', () => {
+    const newIndex = (currentIndex + 1) % figures.length;
+    showFigure(newIndex);
+  });
+
+  showFigure(currentIndex);
 }
