@@ -65,7 +65,7 @@ export const navegation = ()=>{
         const info = document.getElementById("info");
   
         try {
-          const resUbicacion = await fetch("http://ip-api.com/json/");
+          const resUbicacion = await fetch("https://ip-api.com/json/");
           const dataUbicacion = await resUbicacion.json();
   
           const { city, country, lat, lon, timezone } = dataUbicacion;
