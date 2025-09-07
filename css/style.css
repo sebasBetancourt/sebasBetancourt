@@ -12,6 +12,7 @@ body {
   width: 100%;
   z-index: 0;
   color: #ffffff;
+  overflow-x: hidden;
 }
 
 body.light-mode {
@@ -151,13 +152,19 @@ nav {
     border-radius: 35px;
     text-align: center;
     align-content: center;
-    background: #ffffffc7;
+    background: #ffffff9d;
     margin-right: 10%;
     text-decoration: none;
     font-family: 'SpaceGrotesk-Medium';
     font-size: 1.3em;
     color: black;
-    text-shadow: 2px 2px 6px rgb(99, 95, 95);
+}
+.buttonAboutMore p{
+  color: #000000;
+  font-family: 'SpaceGrotesk-Medium';
+  color: black;
+  text-shadow: 2px 2px 6px rgb(99, 95, 95);
+  
 }
 .buttonAboutMore:hover{
     background: #ffffff8a;
@@ -1110,13 +1117,16 @@ body.light-mode .cursor {
   color: black;
 }
 
-body.light-mode .buttonAboutMore {
-  background: #000000c7;
+body.light-mode .buttonAboutMore p{
   color: white;
   text-shadow: 2px 2px 6px rgb(200, 200, 200);
 }
+
 body.light-mode .div__content p {
   color: black;
+}
+body.light-mode .buttonAboutMore {
+  background: #000000c7;
 }
 body.light-mode .buttonAboutMore:hover {
   background: #0000008a;
