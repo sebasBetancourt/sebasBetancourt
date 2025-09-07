@@ -27,7 +27,6 @@ header {
   position: fixed;
   height: 15vh;
   width: 80vw;
-  justify-items: center;
   align-content: center;
   margin-left: 30%;
   padding: 3%;
@@ -362,11 +361,11 @@ nav {
 
 /* --------------------Skills---------------------------------------------------------------- */
 .Skills {
-  height: 150vh;
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 4%;
+  flex-direction: column;
   padding: 7em 6em 10em 6em;
+  gap: 4em;
 }
 a {
   text-decoration: none;
@@ -397,9 +396,9 @@ a:hover {
 .Skills h2::after {
   content: '';
   position: absolute;
-  bottom: -0.1rem;
+  top: 5rem;
   left: 0;
-  width: 80px;
+  width: 12%;
   height: 3px;
   background-color: #4a90e2;
   border-radius: 2px;
@@ -410,14 +409,14 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  padding: 0 4em;
-  gap: 6rem;
+  padding: 0 2em;
+  gap: 1rem;
   background: transparent;
 }
 
 .boxSkill {
-  width: 18%;
-  height: 30%;
+  width: 15em;
+  height: 15em;
   padding: 1em;
   justify-items: center;
   background: transparent;
@@ -437,7 +436,10 @@ a:hover {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 100%;
 }
 
@@ -457,7 +459,6 @@ a:hover {
 }
 
 .contentSkill {
-  justify-self: center;
   width: 90%;
   border-radius: 100%;
   background: rgba(0, 0, 0, 0.918);
@@ -467,7 +468,8 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  align-self: center;
+  height: 90%;
 }
 .contentSkill h4{
   font-family: 'SpaceGrotesk-SemiBold';
@@ -476,10 +478,29 @@ a:hover {
   color: #ffffff;
   margin-bottom: 8px;
 }
-.contentSkill img{
-  width: 40%;
-  height: 30%;
+.contentSkill img {
+  max-width: 30%;
+  max-height: 30%;
+  object-fit: contain;
+  /* 🚫 quitar display:block aquí */
 }
+
+/* Estado inicial (modo dark por defecto) */
+.logo-light {
+  display: none;
+}
+.logo-dark {
+  display: block;
+}
+
+/* Cuando el body tiene clase light-mode */
+body.light-mode .logo-dark {
+  display: none;
+}
+body.light-mode .logo-light {
+  display: block;
+}
+
 
 /* --------------------Projects---------------------------------------------------------------- */
 
@@ -515,12 +536,14 @@ a:hover {
 
 .projects-wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  margin-left: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  justify-items: center;
+  align-content: center;
   align-items: center;
-  gap: 2rem;
   transform: rotate(30deg) translateY(150px);
   opacity: 0;
   will-change: transform, opacity;
@@ -528,8 +551,10 @@ a:hover {
 
 .project {
   display: flex;
-  width: 90%;
+  flex-wrap: wrap;
+  width: 100%;
   height: 50%;
+  gap: 4rem;
   transform: scale(0.6) rotate(-10deg);
   transition: transform 0.2s ease;
   justify-content: space-between;
@@ -538,7 +563,7 @@ a:hover {
 
 .boxProject {
   border-radius: 1.5rem;
-  width: 22%;
+  width: 20em;
   height: 20em;
   position: relative;
   overflow: hidden;
@@ -1055,7 +1080,10 @@ html {
 }
 
 /* -----------------------------Light Mode------------------------------ */
-body.light-mode .campus-class img, .sena-class img {
+body.light-mode .sena-class img {
+  filter: invert(100%);
+}
+body.light-mode .campus-class img{
   filter: invert(100%);
 }
 body.light-mode .linkContent img {
@@ -1799,11 +1827,31 @@ a:hover {
   font-size: 1.2rem;
   color: #ffffff;
   margin-bottom: 8px;
+  display: inline-block;
 }
-.contentSkill img{
-  width: 40%;
-  height: 30%;
+/* Ajustes generales para todos los logos */
+.contentSkill img {
+  max-width: 30%;
+  max-height: 30%;
+  object-fit: contain;
 }
+
+/* Por defecto (dark mode) */
+.logo-light {
+  display: none;
+}
+.logo-dark {
+  display: inline-block;
+}
+
+/* En modo light se intercambian */
+body.light-mode .logo-dark {
+  display: none;
+}
+body.light-mode .logo-light {
+  display: inline-block;
+}
+
 
 /* --------------------Projects---------------------------------------------------------------- */
 
@@ -2437,14 +2485,9 @@ body.light-mode #Contact a {
   color: #000000;
 }
 
-body.light-mode .Skills .contentSkill,
-body.light-mode .campus-class,
-body.light-mode .sena-class,
-body.light-mode .contact-form,
-body.light-mode .boxProject .project-overlay {
-  background: rgba(255, 255, 255, 0.85);
-  color: #000000;
-}
+
+
+
 
 body.light-mode .contact-form input,
 body.light-mode .contact-form textarea {
