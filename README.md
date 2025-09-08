@@ -60,6 +60,15 @@ Mis proyectos clave, en su mayoría colaborativos usando SCRUM, Conventional Com
 - **Repositorio**: [github.com/sebasBetancourt/Edusync](https://github.com/sebasBetancourt/Edusync)  
 - **Destacado**: APIs externas para datos en vivo y CRUD completo.
 
+### PelixFlIX  
+- **Descripción**: PelixFlix es una aplicación web full-stack diseñada para amantes del cine y series. La plataforma permite a los usuarios descubrir, calificar y reseñar películas y series, así como interactuar con las reseñas de otros usuarios mediante likes y dislikes
+
+- **Tecnologías**: React, Tailwind, Vite, Node.js, Express.js, JWT, MongoDB. 
+- **Repositorio BACKEND**: [github.com/sebasBetancourt/Pelixflix--backend](https://github.com/sebasBetancourt/Pelixflix--backend)  
+- **Repositorio FRONT-END**: [github.com/sebasBetancourt/streaming](https://github.com/sebasBetancourt/streaming)  
+
+- **Destacado**: Proyecto colaborativo con Mern.
+
 ### OrbisProCLI  
 - **Descripción**: CLI para freelancers que organiza proyectos y clientes con CRUD personalizados.  
 - **Tecnologías**: JavaScript, MongoDB, Node.js, dotenv  
@@ -84,6 +93,7 @@ Mis proyectos clave, en su mayoría colaborativos usando SCRUM, Conventional Com
 | OrbisProCLI   | JS, MongoDB, Node.js             | CLI y CRUDS                 | Sí           |
 | CampusParking | JS, MongoDB, SCRUM               | Gestión, SOLID              | Sí           |
 | GameCampus    | JS, APIs, HTML/CSS, SCRUM        | Interactividad, personalización | Sí        |
+| PelixFLix    | MERN, SCRUM        | Interactividad, personalización, Bases de Datos, Security | Sí        |
 
 ---
 
@@ -101,18 +111,7 @@ Mis proyectos clave, en su mayoría colaborativos usando SCRUM, Conventional Com
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=sebasBetancourt&show_icons=true&theme=radical)  
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sebasBetancourt&layout=compact&theme=radical)
 
----
 
-## ¡Un Toque Divertido! 🎮
-
-Como fan de los clásicos, aquí un GIF de Mario Bros para recordarnos que el desarrollo es una aventura:
-
-![Mario Bros GIF](https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif)
-
----
-
-¡Gracias por visitar! Si te interesa colaborar o contratar, contáctame. 😊  
-⭐ Si te gusta, dale una estrella al repo!
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=562AA1&height=100&section=footer" width="100%" alt="Footer" />
