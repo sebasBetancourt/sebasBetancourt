@@ -28,7 +28,7 @@ export const navegation = () => {
   });
 
   // --- TYPEWRITER ---
-  const text = "Hola, Soy Sebastian Betancourt. Desarrollador Web.";
+  const text = "Hola, Soy Sebastian Betancourt. Desarrollador de Software.";
   function typeWriter() {
     if (!isDeleting) {
       typedText.textContent = text.slice(0, i);
