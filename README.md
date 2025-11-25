@@ -27,15 +27,15 @@ Desarrollador de software con formación técnica en programación del SENA, esp
 
 Con experiencia en soporte técnico de sistemas, he fortalecido la responsabilidad, empatía y solución de problemas reales. Me caracterizo por orden, carisma y fuerte orientación a resultados, siempre enfocado en aportar valor y entregar soluciones funcionales, bien estructuradas y escalables.
 
-Este portafolio está centrado en desarrollo web full-stack con proyectos innovadores y software escalable. ¡Explora mis creaciones y observa cómo aplico principios SOLID, patrones de diseño y metodologías ágiles SCRUM en entornos colaborativos!
-
 ---
 <div align = center>
   
 ## 🛠️ Technological Stack
 
 ### 👁️ Frontend  
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" height="28"/>  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" height="28"/>  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" height="28"/>  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" height="28"/>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" height="28"/>  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" height="28"/>  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" height="28"/>  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" height="28"/> 
+<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js" height="28"/>
+
 
 ### ⚙️ Backend  
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" height="28"/> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" height="28"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" height="28"/> <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" height="28"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" height="28"/>
@@ -45,6 +45,13 @@ Este portafolio está centrado en desarrollo web full-stack con proyectos innova
 
 ### 🔧 Tools & Methodologies  
 <img src="https://img.shields.io/badge/SCRUM-000000?style=for-the-badge&logo=scrumalliance&logoColor=white" alt="SCRUM" height="28"/> <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" height="28"/> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" height="28"/> <img src="https://img.shields.io/badge/Phaser-3B3B98?style=for-the-badge&logo=phaser&logoColor=white" alt="Phaser" height="28"/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" height="28" />
+<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" height="28" />
+<img src="https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white" height="28" />
+<img src="https://img.shields.io/badge/Nuxt-00DC82?style=for-the-badge&logo=nuxt&logoColor=white" height="28" />
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" height="28" />
+<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" height="28" />
+
 </div>
 
 
@@ -55,10 +62,9 @@ Este portafolio está centrado en desarrollo web full-stack con proyectos innova
 Mis proyectos clave, en su mayoría colaborativos usando SCRUM, Conventional Commits y buenas prácticas Git. Incluyen documentación, instalación, uso y contribución. Aplican principios SOLID para escalabilidad.
 
 ### Edusync  
-- **Descripción**: Plataforma para consumir APIs en tiempo real, mostrando valor de Bitcoin con gráficos y CRUD inteligente.  
-- **Tecnologías**: JavaScript puro, Chart.js, MongoDB, Node.js, Express.js  
+- **Descripción**: Plataforma moderna y responsiva para la gestión académica de una institución educativa.
+- **Tecnologías**: Vue - Nuxt - Django - SQL - Tailwind - TypeScript  
 - **Repositorio**: [github.com/sebasBetancourt/Edusync](https://github.com/sebasBetancourt/Edusync)  
-- **Destacado**: APIs externas para datos en vivo y CRUD completo.
 
 ### PelixFlIX  
 - **Descripción**: PelixFlix es una aplicación web full-stack diseñada para amantes del cine y series. La plataforma permite a los usuarios descubrir, calificar y reseñar películas y series, así como interactuar con las reseñas de otros usuarios mediante likes y dislikes

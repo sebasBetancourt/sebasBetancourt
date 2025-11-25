@@ -23,7 +23,7 @@
                 <li><a title="Acerca" href="#About"><img src="storage/img/aabout.svg" alt="About"></a></li>
                 <li><a title="Herramientas" href="#Skills"><img src="storage/img/tools.svg" alt="Skills"></a></li>
                 <li><a title="Proyectos" href="#Projects"><img src="storage/img/projects.svg" alt="Projects"></a></li>
-                <li><a title="Educacion" href="#Education"><img src="storage/img/education.svg" alt="Education"></a></li>
+                <li><a title="Educacion" href="#educationSection"><img src="storage/img/education.svg" alt="Education"></a></li>
                 <li><a title="Contacto" href="#Contact"><img src="storage/img/contact.svg" alt="Contact"></a></li>
             </ul>
             <button class="buttonLight" id="lightMode"><img  id="imgButton" src="storage/img/light_mode.svg" alt="Light Mode"></button>
@@ -38,7 +38,6 @@
                 </h4>
             </article>
             
-            <a href="#About" class="buttonAboutMore"><p>Mas Acerca de mí</p></a>
             
             <div class="div__content">
                 <div class="linkContent">
@@ -49,6 +48,7 @@
                 <p id="info"></p>
             </div>
         </section>
+
         <section class="container" id="About">
           <div id="carousel">
             <figure>
@@ -102,6 +102,18 @@
                 </div>
               </div>
             </a>
+
+
+            <a href="https://www.typescriptlang.org/" target="_blank" class="boxSkill">
+              <div class="slideSkill">
+                <canvas class="hackerCanvas"></canvas>
+                <div class="contentSkill">
+                  <h4>TypeScript</h4>
+                  <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="logo-dark">
+                  <img src="https://cdn.simpleicons.org/typescript/000000" alt="TypeScript" class="logo-light">
+                </div>
+              </div>
+            </a>
           
           
             <a href="https://es.react.dev/" target="_blank" class="boxSkill">
@@ -115,27 +127,17 @@
               </div>
             </a>
 
-            <a href="https://es.react.dev/" target="_blank" class="boxSkill">
+            <a href="https://vuejs.org/" target="_blank" class="boxSkill">
               <div class="slideSkill">
                 <canvas class="hackerCanvas"></canvas>
                 <div class="contentSkill">
-                  <h4>Angular</h4>
-                  <img src="https://cdn.simpleicons.org/angular/FF2121" alt="React.js" class="logo-dark">
-                  <img src="https://cdn.simpleicons.org/angular/000000" alt="React.js" class="logo-light">
+                  <h4>Vue</h4>
+                  <img src="https://cdn.simpleicons.org/vue.js/4FC08D" alt="Vue" class="logo-dark">
+                  <img src="https://cdn.simpleicons.org/vue.js/000000" alt="Vue" class="logo-light">
                 </div>
               </div>
             </a>
           
-            <a href="https://www.typescriptlang.org/" target="_blank" class="boxSkill">
-              <div class="slideSkill">
-                <canvas class="hackerCanvas"></canvas>
-                <div class="contentSkill">
-                  <h4>TypeScript</h4>
-                  <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="logo-dark">
-                  <img src="https://cdn.simpleicons.org/typescript/000000" alt="TypeScript" class="logo-light">
-                </div>
-              </div>
-            </a>
           
             <a href="https://nodejs.org/en" target="_blank" class="boxSkill">
               <div class="slideSkill">
@@ -205,13 +207,46 @@
             </a>
 
 
-            <a href="https://tailwindcss.com/" target="_blank" class="boxSkill">
+            <a href="https://git-scm.com/" target="_blank" class="boxSkill">
               <div class="slideSkill">
                 <canvas class="hackerCanvas"></canvas>
                 <div class="contentSkill">
-                  <h4>Bootstrap</h4>
-                  <img src="https://cdn.simpleicons.org/bootstrap/7221FF" alt="Tailwind" class="logo-dark">
-                  <img src="https://cdn.simpleicons.org/bootstrap/000000" alt="Tailwind" class="logo-light">
+                  <h4>Git</h4>
+                  <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="logo-dark">
+                  <img src="https://cdn.simpleicons.org/git/000000" alt="Git" class="logo-light">
+                </div>
+              </div>
+            </a>
+
+            <a href="https://linux.org/" target="_blank" class="boxSkill">
+              <div class="slideSkill">
+                <canvas class="hackerCanvas"></canvas>
+                <div class="contentSkill">
+                  <h4>Linux</h4>
+                  <img src="https://img.icons8.com/color/96/linux--v1.png" alt="linux--v1" class="logo-dark"/>
+                  <img src="https://img.icons8.com/ios-filled/50/000000/linux--v1.png" alt="linux--v1" class="logo-light"/>
+                </div>
+              </div>
+            </a>
+
+            <a href="https://nuxt.com/" target="_blank" class="boxSkill">
+              <div class="slideSkill">
+                <canvas class="hackerCanvas"></canvas>
+                <div class="contentSkill">
+                  <h4>Nuxt</h4>
+                  <img src="https://cdn.simpleicons.org/nuxt/00C58E" alt="Nuxt" class="logo-dark">
+                  <img src="https://cdn.simpleicons.org/nuxt/000000" alt="Nuxt" class="logo-light">
+                </div>
+              </div>
+            </a>
+
+            <a href="https://vitejs.dev/" target="_blank" class="boxSkill">
+              <div class="slideSkill">
+                <canvas class="hackerCanvas"></canvas>
+                <div class="contentSkill">
+                  <h4>Vite</h4>
+                  <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" class="logo-dark">
+                  <img src="https://cdn.simpleicons.org/vite/000000" alt="Vite" class="logo-light">
                 </div>
               </div>
             </a>
@@ -223,73 +258,320 @@
 
 
 
+        
+
+
         <section id="Projects" class="Projects">
           <h2>Proyectos</h2>
           <div class="projects-wrapper">
             <div class="project">
-              <div class="boxProject"><a href="https://streaming-psi-olive.vercel.app/" target="_blank"><img loading="lazy" src="./storage/img/pixelflix.png"></a></div>
-              <div class="boxProject"><a href="https://sebasbetancourt.github.io/criptoCoins/" target="_blank"><img loading="lazy" src="./storage/img/BiTripeProject-1.png"></a></div>
-              <div class="boxProject"><a href="https://edusyncop.vercel.app/login" target="_blank"><img loading="lazy" src="./storage/img/simpleBoardProject.png"></a></div>
-              <div class="boxProject"><a href="https://julianort11.github.io/GameCampus/" target="_blank"><img loading="lazy" src="./storage/img/gameProject.png"></a></div>
+            
+              <!-- ================= PIXELFLIX ================= -->
+              <div class="boxProject">
+                <img loading="lazy" src="./storage/img/pixelflix.png" class="main-img">
+                <img loading="lazy" src="./storage/img/pixelflix-preview.png" class="preview-img">
+              
+                <div class="project-overlay">
+                  <h3>Pixelflix</h3>
+                  <p>PelixFlix es la plataforma de usuario de la plataforma de reseñas de películas y series.</p>
+                  <span class="technologies"><strong>MERN</strong> React - Vite - Nodejs - Express - MongoDB - Tailwind</span>
 
-              <div class="boxProject"><a href="https://github.com/sebasBetancourt/Orbis-ProCLI.git" target="_blank"><img loading="lazy" src="https://kinsta.com/wp-content/uploads/2022/02/chrome-breakpoint.png"></a></div>
-              <div class="boxProject"><a href="https://github.com/sebasBetancourt/Campus-Parking.git" target="_blank"><img loading="lazy" src="https://img.freepik.com/vector-gratis/estilo-plano-senal-estacionamiento_78370-3479.jpg?semt=ais_hybrid&w=740&q=80"></a></div>
-              <div class="boxProject"><a href="https://github.com/sebasBetancourt/pizza-punto" target="_blank"><img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0-HmskFIOzX-o3_DTZdgLshMNluWvZpwAw&s"></a></div>
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React.js" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/react/000000" alt="React.js" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/vite/000000" alt="Vite" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/nodedotjs/000000" alt="Node.js" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/express/FFFFFF" alt="Express.js" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/express/000000" alt="Express.js" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/mongodb/000000" alt="MongoDB" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/000000" alt="Tailwind" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/streaming" target="_blank">Código</a>
+                    <a href="https://streaming-psi-olive.vercel.app/" target="_blank">Demo</a>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- ================= CRIPTOCOINS ================= -->
+              <div class="boxProject">
+                <img loading="lazy" src="./storage/img/BiTripeProject-1.png" class="main-img">
+                <img loading="lazy" src="./storage/img/BiTripeProject-preview.png" class="preview-img">
+              
+                <div class="project-overlay">
+                  <h3>BitTribe</h3>
+                  <p>BitTribe es una aplicación web moderna y completamente responsiva que permite explorar, buscar, analizar y convertir criptomonedas en tiempo real.</p>
+                  <span class="technologies">React — Vite — FastAPI - SQL - Tailwind - TypeScript</span>
 
-              <div class="boxProject"><a href="https://sebasbetancourt.github.io/weather-app-redesign/" target="_blank"><img loading="lazy" src="./storage/img/logoWeather.jpeg"></a></div>
-              <div class="boxProject"><a href="https://sebasbetancourt.github.io/Crae/" target="_blank"><img loading="lazy" src="./storage/img/CraeProject.png"></a></div>
-              <div class="boxProject"><a href="https://sebasbetancourt.github.io/Conciertos_conectados/" target="_blank"><img loading="lazy" src="./storage/img/conciertoProject.avif"></a></div>
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React.js" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/react/000000" alt="React.js" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/vite/000000" alt="Vite" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/fastapi/009688" alt="FastAPI" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/fastapi/000000" alt="FastAPI" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/mysql/000000" alt="MySQL" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/000000" alt="Tailwind" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/typescript/000000" alt="TypeScript" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/criptoCoins" target="_blank">Código</a>
+                    <a href="https://sebasbetancourt.github.io/criptoCoins/" target="_blank">Demo</a>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="boxProject">
+                <img loading="lazy" src="./storage/img/simpleBoardProject.png" class="main-img">
+                <img loading="lazy" src="./storage/img/simpleBoardProject-preview.png" class="preview-img">
+              
+                <div class="project-overlay">
+                  <h3>Edusync</h3>
+                  <p>Plataforma moderna y responsiva para la gestión académica de una institución educativa.</p>
+                  <span class="technologies">Vue - Nuxt - Django - SQL - Tailwind - TypeScript</span>
+
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/vue.js/4FC08D" alt="Vue" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/vue.js/000000" alt="Vue" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/nuxt/00C58E" alt="Nuxt" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/nuxt/000000" alt="Nuxt" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/django/092E20" alt="Django" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/django/000000" alt="Django" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/mysql/000000" alt="MySQL" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/000000" alt="Tailwind" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/typescript/000000" alt="TypeScript" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/Edusync" target="_blank">Código</a>
+                    <a href="https://edusyncop.vercel.app/login" target="_blank">Demo</a>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="boxProject">
+                <img loading="lazy" src="./storage/img/gameProject.png" class="main-img">
+                <img loading="lazy" src="./storage/img/gameProject-preview.png" class="preview-img">
+              
+                <div class="project-overlay">
+                  <h3>GameCampus</h3>
+                  <p>Una plataforma web interactiva inspirada en Dungeons & Dragons, donde los usuarios pueden crear personajes de fantasía personalizables con razas, clases, habilidades y equipos únicos.</p>
+                  <span class="technologies">HTML - CSS - JS - API Rest</span>
+
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/html5/000000" alt="HTML5" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/css/000000" alt="CSS3" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/javascript/000000" alt="JavaScript" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/julianort11/GameCampus" target="_blank">Código</a>
+                    <a href="https://julianort11.github.io/GameCampus/" target="_blank">Demo</a>
+                  </div>
+                </div>
+              </div>
+            
+            
+            
+              <div class="boxProject">
+                <img loading="lazy" src="https://media.licdn.com/dms/image/v2/C5612AQEu1nqRJZXjCQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1647986629460?e=2147483647&v=beta&t=ZWpkCw97hpFeq4ERbdqYGWfUy7EaYBXKcgTtj4Wph70" class="main-img">
+                <img loading="lazy" src="https://media.licdn.com/dms/image/v2/C5612AQEu1nqRJZXjCQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1647986629460?e=2147483647&v=beta&t=ZWpkCw97hpFeq4ERbdqYGWfUy7EaYBXKcgTtj4Wph70" class="preview-img">
+              
+                <div class="project-overlay">
+                  <h3>Orbis-ProCLI</h3>
+                  <p>Aplicación de línea de comandos (CLI) que permite a un freelancer gestionar su portafolio profesional. (Patrones de Diseño) - (Principios SOLID)</p>
+                  <span class="technologies">NodeJS - MongoDB</span>
+
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/nodedotjs/000000" alt="Node.js" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/mongodb/000000" alt="MongoDB" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/Orbis-ProCLI" target="_blank">Código</a>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div
+               class="boxProject">
+                <img loading="lazy" src="https://img.freepik.com/vector-gratis/estilo-plano-senal-estacionamiento_78370-3479.jpg?semt=ais_hybrid&w=740&q=80" class="main-img">
+            
+                <div class="project-overlay">
+                  <h3>Campus-Parking</h3>
+                  <p>Campus Parking es un sistema de gestión de parqueaderos diseñado para administrar el registro de ingresos y salidas de vehículos en múltiples sedes, zonas y tipos de vehículos.</p>
+                  <span class="technologies">MongoDB</span>
+
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/mongodb/000000" alt="MongoDB" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/Campus-Parking" target="_blank">Código</a>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="boxProject">
+                <img loading="lazy" src="./storage/img/logoWeather.jpeg" class="main-img">
+              
+                <div class="project-overlay">
+                  <h3>Weather App</h3>
+                  <p>La Weather App es una aplicación <strong>Mobile</strong> diseñada para proporcionar información meteorológica actualizada y precisa a los usuarios.</p>
+                  <span class="technologies">HTML - CSS - JS - API Rest</span>
+
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/html5/000000" alt="HTML5" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/css/000000" alt="CSS3" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/javascript/000000" alt="JavaScript" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/weather-app-redesign" target="_blank">Código</a>
+                    <a href="https://sebasBetancourt.github.io/weather-app-redesign/" target="_blank">Demo</a>
+                  </div>
+                </div>
+              </div>
+            
+             <div class="boxProject">
+                <img loading="lazy" src="./storage/img/CraeProject.png" class="main-img">
+            
+                <div class="project-overlay">
+                  <h3>Crae</h3>
+                  <p>Crae es una Landing donde personas videntes, no videntes y con discapacidad visual pueden participar y disfrutar en conjunto.</p>
+                  <span class="technologies">HTML - CSS</span>
+
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/html5/000000" alt="HTML5" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/css/000000" alt="CSS3" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/Crae" target="_blank">Código</a>
+                    <a href="https://sebasBetancourt.github.io/Crae/" target="_blank">Demo</a>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="boxProject">
+                <img loading="lazy" src="./storage/img/conciertoProject.avif" class="main-img">
+              
+                <div class="project-overlay">
+                  <h3>Connected Concerts</h3>
+                  <p>Connected Concerts is a web application <strong>Mobile</strong> that allows users to explore, purchase, and manage tickets for concerts and music events.</p>
+                  <span class="technologies">HTML - CSS</span>
+
+                  <div class="project-technologies">
+                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/html5/000000" alt="HTML5" class="logo-light">
+                    <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3" class="logo-dark">
+                    <img src="https://cdn.simpleicons.org/css/000000" alt="CSS3" class="logo-light">
+                  </div>
+                
+                  <div class="overlay-buttons">
+                    <a href="https://github.com/sebasBetancourt/Conciertos_conectados" target="_blank">Código</a>
+                    <a href="https://sebasbetancourt.github.io/Conciertos_conectados/" target="_blank">Demo</a>
+                  </div>
+                </div>
+              </div>
+            
+            
             </div>
           </div>
         </section>
 
+        <section id="educationSection" class="timeline-section">
+          <h2>Educación</h2>
 
-        <section id="Education" class="Education">
-            <h2>Educacion</h2>
-            <div class="educationWrapper">
-              <div class="campus-class">
-                  <h4>CampusLands</h4>
-                  <img src="./storage/img/campusLandsIcon.png" alt="CampusLands Logo" />
-                  <h6>Técnico en Programación Web</h6>
-                  <p>
-                      Formación intensiva en desarrollo web fullstack con un fuerte enfoque en proyectos del mundo real y aprendizaje práctico utilizando herramientas y tecnologías modernas. Durante el programa, adquirí experiencia práctica en trabajo colaborativo a través de la metodología Scrum y desarrollé habilidades blandas esenciales como puntualidad, responsabilidad y comunicación efectiva dentro de un equipo. Este proceso exigente marcó un punto de inflexión en mi camino como programador, llevando mis habilidades al siguiente nivel.
-                  </p>
+          <div class="timeline-progress">
+            <div class="line-background"></div>
+            <div class="line-fill" id="timelineFill"></div>
+          </div>
+        
+          <div class="timeline-content">
+          
+            <div class="timeline-item left">
+              <div class="tags">
+                <img src="./storage//img/campusLandsIcon.png" alt="">
               </div>
-              <div class="sena-class">
-                  <h4>SENA</h4>
-                  <img src="./storage/img/sena.png" alt="SENA Logo" />
-                  <h6>Técnico en Programación de Software</h6>
-                  <p>
-                      Programa de formación técnica de dos años enfocado en el desarrollo de software a través de proyectos del mundo real. Durante este tiempo, mejoré significativamente mi lógica de programación y fortalecí mis habilidades técnicas, especialmente en desarrollo web. Esta experiencia sentó una base sólida para mi crecimiento como desarrollador.
-                  </p>
+              <span class="date">2024 — 2025</span>
+              <h3>Educacion · CampusLands</h3>
+              <p>
+                Campuslands forma a jóvenes con competencias únicas para su primer empleo de calidad en desarrollo de software.
+              </p>
+            </div>
+          
+            <div class="timeline-item right">
+              <span class="date">2024 — 2025 CampusLands</span>
+              <h3>Tecnico en Programacion Avanzada</h3>
+              <p>
+                  Formación intensiva en desarrollo web fullstack con un fuerte enfoque en proyectos del mundo real y aprendizaje práctico utilizando herramientas y tecnologías modernas. Durante el programa, adquirí experiencia práctica en trabajo colaborativo a través de la metodología Scrum y desarrollé habilidades blandas esenciales como puntualidad, responsabilidad y comunicación efectiva dentro de un equipo. Este proceso exigente marcó un punto de inflexión en mi camino como programador, llevando mis habilidades al siguiente nivel.
+              </p>
+              <div class="tags">
+                <span>Python</span> <span>HTML</span> <span>CSS</span> <span>JS</span> <span>NodeJS</span> <span>Express</span> <span>MongoDB</span> <span>MySQL</span> <span>React</span> <span>Tailwind</span>
               </div>
             </div>
+          
+            <div class="timeline-item left">
+              <div class="tags">
+                <img src="./storage//img/sena.png" alt="">
+              </div>
+              <span class="date">2023 — 2024</span>
+              <h3>Educacion · SENA</h3>
+              <p>
+                El SENA (Servicio Nacional de Aprendizaje) institución pública que ofrece formación técnica y tecnológica gratuita, orientada al desarrollo de competencias laborales y al fortalecimiento del talento humano.
+              </p>
+              <div class="tags">
+                <span>Algorithms</span> <span>Data</span>
+              </div>
+            </div>
+
+
+            <div class="timeline-item right">
+              <span class="date">2023 — 2024 SENA</span>
+              <h3>Tecnico en Programacion de Sotware</h3>
+              <p>
+                  Programa de formación técnica de dos años enfocado en el desarrollo de software a través de proyectos del mundo real. Durante este tiempo, mejoré significativamente mi lógica de programación y fortalecí mis habilidades técnicas, especialmente en desarrollo web. Esta experiencia sentó una base sólida para mi crecimiento como desarrollador.
+              </p>
+              <div class="tags">
+                <span>Python</span> <span>FastAPI</span> <span>Django</span> <span>WordPress</span> 
+              </div>
+            </div>
+          
+          </div>
+        
         </section>
+
 
         
 
         <section id="Contact" class="Contact">
           <div class="contact-wrapper">
-              <h2>Contactame</h2>
-              <div class="contact-form">
-                  <h3>Mandame un Mensaje</h3>
-                  <form id="contactForm">
-                      <div class="form-group">
-                          <label for="name">Nombre:</label>
-                          <input type="text" id="name" name="name" placeholder="Escribe tu Nombre" required>
-                      </div>
-                      <div class="form-group">
-                          <label for="email">Email:</label>
-                          <input type="email" id="email" name="email" placeholder="@gmail.com" required>
-                      </div>
-                      <div class="form-group">
-                          <label for="message">Mensaje:</label>
-                          <textarea id="message" name="message" placeholder="..." required></textarea>
-                      </div>
-                      <button type="submit">Enviar</button>
-                  </form>
-                  <p id="formMessage" class="hidden"></p>
-              </div>
 
               <div class="contact-info">
                   <h3>Contactame</h3>
@@ -324,8 +606,13 @@
 
                   </div>
               </div>
+
+
+              
           </div>
         </section>
+  
+
         
         
         

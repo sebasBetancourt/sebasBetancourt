@@ -7,15 +7,16 @@ import { slideSkills } from './slideSkills.js';
 import { educationScroll } from './educationScroll.js';
 import { contactanos } from './contactanos.js';
 import { hamburgerMenu } from './hamburguerMenu.js';
+import { timelineProgress } from './scrollBar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+timelineProgress();
   scrollAnimation();
   navegation();
   gsapScroll();
   lightMode();
   carouselAbout();
   slideSkills();
-  contactanos()
   educationScroll();
   hamburgerMenu();
     if (window.VANTA) {
