@@ -1,0 +1,169 @@
+"use client";
+
+import { motion } from "motion/react";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { Avatar } from "../ui/avatar";
+import { Globe } from "lucide-react";
+import Mundo from "../atoms/Globe";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiCss3,
+  SiPostgresql,
+  SiMongodb,
+  SiVercel,
+  SiDocker
+} from "react-icons/si";
+import {FaAws} from "react-icons/fa"
+
+
+function BentoCard({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.015 }}
+      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+      className={cn(
+        "relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-6 backdrop-blur-xl",
+        className
+      )}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function Flag({ label, img }: { label: string, img: string }) {
+  return (
+    <div className="flex rounded-full border border-white/10 px-3 py-1 text-xs text-neutral-300 justify-center items-center gap-1">
+        <span className="">
+      {label}
+    </span>
+    <img className="w-4 h-4" src={img} alt="" />
+    </div>
+  );
+}
+
+function GlobeL() {
+  return (
+    <div className="absolute bottom-0 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+  );
+}
+
+
+
+export default function AboutBento() {
+  return (
+    <section className="w-full min-h-screen flex items-center justify-center px-25 py-14">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-3 auto-rows-[320px]">
+
+        {/* Collaboration */}
+        <BentoCard className="md:col-span-2">
+          <p className="text-xs uppercase tracking-widest text-neutral-400">
+            Collaboration
+          </p>
+          <h3 className="mt-3 text-lg text-neutral-200">
+            Priorizo ​​la colaboración con el cliente,
+            <br /> fomentando la comunicación abierta.
+          </h3>
+
+          <div className="absolute inset-x-0 bottom-4 flex justify-center">
+            <Avatar />
+          </div>
+        </BentoCard>
+
+        {/* Tech Stack */}
+        <BentoCard>
+          <p className="text-xs uppercase tracking-widest text-neutral-400">
+            Tech stack
+          </p>
+
+          <h3 className="mt-2 text-lg font-medium text-neutral-100">
+            Apasionado por tecnologías de vanguardia
+          </h3>
+
+          <div className="mt-1 flex flex-wrap gap-3">
+            {[
+              { name: "Next.js", icon: SiNextdotjs },
+              { name: "TypeScript", icon: SiTypescript },
+              { name: "Tailwind CSS", icon: SiTailwindcss },
+              { name: "CSS", icon: SiCss3 },
+              { name: "PostgreSQL", icon: SiPostgresql },
+              { name: "MongoDB", icon: SiMongodb },
+              { name: "Vercel", icon: SiVercel },
+              { name: "Docker", icon: SiDocker },
+              { name: "AWS", icon: FaAws },
+            ].map(({ name, icon: Icon }) => (
+              <span
+                key={name}
+                className="
+                  inline-flex items-center gap-2
+                  rounded-full border border-white/10
+                  px-3 py-1.5 text-xs text-neutral-300
+                  bg-white/[0.02] backdrop-blur
+                  hover:border-white/20 hover:text-white
+                  transition
+                "
+              >
+                <Icon className="h-4 w-4 opacity-80" />
+                {name}
+              </span>
+            ))}
+          </div>
+        </BentoCard>
+
+
+        {/* Timezone */}
+        <BentoCard className="md:row-span-2">
+          <div className="flex gap-4 justify-center items-center">
+            <h2 className="text-xl text-neutral-300 fon">
+            Soy muy flexible, Trabajo Remoto para cualquier parte del Mundo
+          </h2>
+          <Globe className="h-15 w-15"/>
+          </div>
+
+          <div className="mt-6 flex gap-2">
+            <Flag label="Colombia" img="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/1280px-Flag_of_Colombia.svg.png"/>
+            <Flag label="LATAM" img="https://cdn-icons-png.freepik.com/256/10601/10601279.png?semt=ais_white_label"/>
+            <Flag label="USA" img="https://static.vecteezy.com/system/resources/previews/001/233/168/non_2x/united-states-of-america-flag-vector.jpg"/>
+          </div>
+
+          <Mundo></Mundo>
+        </BentoCard>
+
+        {/* CTA */}
+        <BentoCard className="md:col-span-3">
+  <h3 className="text-xl font-semibold text-neutral-100">
+    Construyamos algo juntos
+  </h3>
+
+  <p className="mt-2 text-sm text-neutral-400 leading-relaxed">
+    Trabajo con emprendedores, empresas e instituciones para diseñar
+    y desarrollar software confiable que resuelva problemas reales
+    y pueda crecer con el tiempo.
+  </p>
+
+  <p className="mt-2 text-sm text-neutral-400">
+    Abierto a proyectos freelance, alianzas y colaboraciones a largo plazo.
+  </p>
+
+  <a
+    href="mailto:hello@sebastian.dev"
+    className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-neutral-200 hover:bg-white/10 transition"
+  >
+    Contáctame
+  </a>
+</BentoCard>
+
+
+      </div>
+    </section>
+  );
+}
