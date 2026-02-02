@@ -4,8 +4,10 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Avatar } from "../ui/avatar";
+import InfiniteSlider from "../ui/smoothui/infinite-slider";
 import { Globe } from "lucide-react";
 import Mundo from "../atoms/Globe";
+import { SocialCardExample } from "../atoms/CardContact";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -81,43 +83,71 @@ export default function AboutBento() {
 
         {/* Tech Stack */}
         <BentoCard>
-          <p className="text-xs uppercase tracking-widest text-neutral-400">
-            Tech stack
-          </p>
+  <p className="text-xs uppercase tracking-widest text-neutral-400">
+    Tech stack
+  </p>
 
-          <h3 className="mt-2 text-lg font-medium text-neutral-100">
-            Apasionado por tecnologías de vanguardia
-          </h3>
+  <h3 className="mt-2 text-lg font-medium text-neutral-100">
+    Apasionado por tecnologías de vanguardia
+  </h3>
 
-          <div className="mt-1 flex flex-wrap gap-3">
-            {[
-              { name: "Next.js", icon: SiNextdotjs },
-              { name: "TypeScript", icon: SiTypescript },
-              { name: "Tailwind CSS", icon: SiTailwindcss },
-              { name: "CSS", icon: SiCss3 },
-              { name: "PostgreSQL", icon: SiPostgresql },
-              { name: "MongoDB", icon: SiMongodb },
-              { name: "Vercel", icon: SiVercel },
-              { name: "Docker", icon: SiDocker },
-              { name: "AWS", icon: FaAws },
-            ].map(({ name, icon: Icon }) => (
-              <span
-                key={name}
-                className="
-                  inline-flex items-center gap-2
-                  rounded-full border border-white/10
-                  px-3 py-1.5 text-xs text-neutral-300
-                  bg-white/[0.02] backdrop-blur
-                  hover:border-white/20 hover:text-white
-                  transition
-                "
-              >
-                <Icon className="h-4 w-4 opacity-80" />
-                {name}
-              </span>
-            ))}
-          </div>
-        </BentoCard>
+  {/* Frontend / UI */}
+  <div className="mt-4 w-full overflow-hidden">
+    <InfiniteSlider gap={20} speed={35} speedOnHover={0}>
+      {[
+        { name: "Next.js", icon: SiNextdotjs },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "Tailwind", icon: SiTailwindcss },
+        { name: "CSS", icon: SiCss3 },
+        { name: "Vercel", icon: SiVercel },
+      ].map(({ name, icon: Icon }) => (
+        <div
+          key={name}
+          className="
+            flex h-20 w-20 shrink-0 flex-col items-center justify-center
+            rounded-xl border border-white/10
+            bg-white/[0.02] backdrop-blur
+            text-neutral-300
+            hover:border-white/20 hover:text-white
+            transition
+          "
+        >
+          <Icon className="h-7 w-7" />
+          <span className="mt-1 text-[10px]">{name}</span>
+        </div>
+      ))}
+    </InfiniteSlider>
+  </div>
+
+  {/* Backend / Infra (dirección opuesta) */}
+  <div className="mt-4 w-full overflow-hidden">
+    <InfiniteSlider gap={20} speed={35} speedOnHover={0} reverse>
+      {[
+        { name: "PostgreSQL", icon: SiPostgresql },
+        { name: "MongoDB", icon: SiMongodb },
+        { name: "Docker", icon: SiDocker },
+        { name: "AWS", icon: FaAws },
+      ].map(({ name, icon: Icon }) => (
+        <div
+          key={name}
+          className="
+            flex h-20 w-20 shrink-0 flex-col items-center justify-center
+            rounded-xl border border-white/10
+            bg-white/[0.02] backdrop-blur
+            text-neutral-300
+            hover:border-white/20 hover:text-white
+            transition
+          "
+        >
+          <Icon className="h-7 w-7" />
+          <span className="mt-1 text-[10px]">{name}</span>
+        </div>
+      ))}
+    </InfiniteSlider>
+  </div>
+</BentoCard>
+
+
 
 
         {/* Timezone */}
@@ -139,28 +169,32 @@ export default function AboutBento() {
         </BentoCard>
 
         {/* CTA */}
-        <BentoCard className="md:col-span-3">
-  <h3 className="text-xl font-semibold text-neutral-100">
-    Construyamos algo juntos
-  </h3>
+        <BentoCard className="md:col-span-2 flex-1 space-y-6">
+          <div className="flex flex-col gap-2">
+            <h3 className="text-xl font-semibold text-neutral-100">
+              Construyamos algo juntos
+            </h3>
 
-  <p className="mt-2 text-sm text-neutral-400 leading-relaxed">
-    Trabajo con emprendedores, empresas e instituciones para diseñar
-    y desarrollar software confiable que resuelva problemas reales
-    y pueda crecer con el tiempo.
-  </p>
+            <p className="mt-2 text-m italic text-neutral-400 leading-relaxed">
+              Trabajo con emprendedores, empresas e instituciones para diseñar
+              y desarrollar software confiable que resuelva problemas reales
+              y pueda crecer con el tiempo.
+            </p>
 
-  <p className="mt-2 text-sm text-neutral-400">
-    Abierto a proyectos freelance, alianzas y colaboraciones a largo plazo.
-  </p>
+            <p className="mt-2 text-m italic text-neutral-400">
+              Abierto a proyectos freelance, alianzas y colaboraciones a largo plazo.
+            </p>
+          </div>
 
-  <a
-    href="mailto:hello@sebastian.dev"
-    className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-neutral-200 hover:bg-white/10 transition"
-  >
-    Contáctame
-  </a>
-</BentoCard>
+          <span className="font-bold text-lg">Contactame:</span>
+        </BentoCard>
+
+        <BentoCard className="p-0">
+          <SocialCardExample>
+
+          </SocialCardExample>
+        </BentoCard>
+        
 
 
       </div>

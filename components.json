@@ -20,6 +20,8 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@aceternity": "https://ui.aceternity.com/registry/{name}.json"
+    "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
+    "@smoothui": "https://smoothui.dev/r/{name}.json",
+    "@forgeui": "https://forgeui.in/r/{name}.json"
   }
 }
