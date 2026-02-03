@@ -2,9 +2,16 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import type { IconType } from "react-icons";
 
+interface SkillsSectionProps {
+  icons: IconType[];
+  text1: string;
+  text2: string;
+  className: string;
+}
 
-export default function SkillsSection(icons: any) {
+export default function SkillsSection({ icons, text1, text2, className }: SkillsSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -20,57 +27,36 @@ export default function SkillsSection(icons: any) {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black px-6"
+      className="relative flex flex-col items-center justify-around gap-4 px-6 py-4"
     >
       {/* Title */}
       <motion.div
-        style={{
-          opacity,
-          y: useTransform(scrollYProgress, [0, 1], [40, 0]),
-        }}
-        className="mb-16 text-center"
+        style={{ opacity, y: useTransform(scrollYProgress, [0, 1], [40, 0]) }}
+        className="text-center mb-4"
       >
-        <p className="text-xs tracking-widest text-neutral-400">MY SKILLS</p>
-        <h2 className="text-4xl md:text-5xl font-serif text-white">
-          The Secret{" "}
-          <span className="bg-gradient-to-r from-fuchsia-500 to-purple-500 bg-clip-text text-transparent">
-            Sauce
-          </span>
+        <h2 className="text-4xl md:text-6xl font-extrabold font-instrument text-black dark:text-white">
+          {text1}{" "}
+          <span className={className}>{text2}</span>
         </h2>
       </motion.div>
 
-      {/* Icons */}
+      {/* Icons Grid */}
       <motion.div
         style={{ opacity, scale }}
-        className="flex w-full max-w-5xl flex-wrap items-center justify-center gap-6"
+        className="grid grid-cols-6 justify-items-center gap-2"
       >
         {icons.map((Icon, i) => {
           const distanceFromCenter = i - centerIndex;
 
-          const x = useTransform(
-            scrollYProgress,
-            [0, 1],
-            [distanceFromCenter * 120, 0]
-          );
-
-          const y = useTransform(
-            scrollYProgress,
-            [0, 1],
-            [Math.abs(distanceFromCenter) * 40, 0]
-          );
-
-          const rotate = useTransform(
-            scrollYProgress,
-            [0, 1],
-            [distanceFromCenter * 12, 0]
-          );
+          const x = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 100, 0]);
+          const y = useTransform(scrollYProgress, [0, 1], [Math.abs(distanceFromCenter) * 20, 0]);
+          const rotate = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 12, 0]);
 
           return (
             <motion.div
               key={i}
               style={{ x, y, rotate }}
-              className="flex h-16 w-16 items-center justify-center rounded-2xl
-                         bg-neutral-900 shadow-lg"
+              className="flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-900 shadow-lg"
             >
               <Icon className="h-8 w-8 text-white/90" />
             </motion.div>

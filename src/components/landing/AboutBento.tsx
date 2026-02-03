@@ -73,11 +73,11 @@ export default function AboutBento() {
         {/* Collaboration */}
         <BentoCard className="md:col-span-2 flex justify-between ">
           <div className="space-y-5">
-            <p className="text-xs uppercase tracking-widest text-neutral-400">
+            <p className="text-xs uppercase tracking-widest text-neutral-400 font-mono">
               Colaboración
             </p>
           
-            <h3 className="mt-3 text-lg text-neutral-200">
+            <h3 className="mt-3 text-m text-neutral-200">
               Priorizo la colaboración con el cliente,
               <br /> fomentando la comunicación abierta.
             </h3>
@@ -101,11 +101,11 @@ export default function AboutBento() {
 
         {/* Tech Stack */}
         <BentoCard>
-  <p className="text-xs uppercase tracking-widest text-neutral-400">
+  <p className="text-xs uppercase tracking-widest text-neutral-400 font-mono">
     Tech stack
   </p>
 
-  <h3 className="mt-2 text-lg font-medium text-neutral-100">
+  <h3 className="mt-2 text-m font-medium text-neutral-100">
     Apasionado por tecnologías de vanguardia
   </h3>
 
@@ -171,7 +171,7 @@ export default function AboutBento() {
         {/* Timezone */}
         <BentoCard className="md:row-span-2">
           <div className="flex gap-4 justify-center items-center">
-            <h2 className="text-xl text-neutral-300 fon">
+            <h2 className="text-3xl dark:text-neutral-300  text-black font-instrument">
             Soy muy flexible, Trabajo Remoto para cualquier parte del Mundo
           </h2>
           <Globe className="h-15 w-15"/>
@@ -189,11 +189,11 @@ export default function AboutBento() {
         {/* CTA */}
         <BentoCard className="md:col-span-2 flex-1 space-y-6">
           <div className="flex flex-col gap-2">
-            <h3 className="text-xl font-semibold text-neutral-100">
+            <h3 className="text-4xl  dark:text-neutral-100  text-black font-instrument">
               Construyamos algo juntos
             </h3>
 
-            <p className="mt-2 text-m italic text-neutral-400 leading-relaxed">
+            <p className="mt-2 text-m text-neutral-400 leading-relaxed">
               Trabajo con emprendedores, empresas e instituciones para diseñar
               y desarrollar software confiable que resuelva problemas reales
               y pueda crecer con el tiempo.

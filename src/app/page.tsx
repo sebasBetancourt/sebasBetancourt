@@ -1,7 +1,7 @@
 import HomeComponents from "@/components/landing/Home";
 import { AboutSection } from "@/components/landing/AboutSection";
 import AboutBento from "@/components/landing/AboutBento";
-import HomeTools from "@/components/landing/HomeTools";
+import SkillsDashboard from "@/components/landing/HomeTools";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       </section>
 
       <section className="">
-        <HomeTools />
+        <SkillsDashboard />
       </section>
 
     </main>
