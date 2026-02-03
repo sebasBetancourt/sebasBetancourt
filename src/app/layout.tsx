@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/atoms/themes";
 
 import Navbar from "@/components/organisms/NavBar";
 import Footer from "@/components/organisms/Footer";
+import { Outfit, Instrument_Serif } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const outfit = Outfit({
   subsets: ["latin"],
+  weight: ["300"],
+  display: "swap",
+  variable: "--font-outfit",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-instrument",
 });
-
 export const metadata: Metadata = {
   title: {
     default: 'Sebastian Betancourt | Software Developer',
@@ -81,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${instrumentSerif.variable} overflow-x-hidden`}
       >
         <ThemeProvider>
           <Navbar />

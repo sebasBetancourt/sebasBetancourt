@@ -125,7 +125,7 @@ const TypingText = ({
       if (isDeleting) {
         if (displayedText === "") {
           setIsDeleting(false)
-          if (currentTextIndex === textArray.length - 1 && !loop) {
+          if (currentTextIndex === textArray.length - 1 && loop) {
             return
           }
 

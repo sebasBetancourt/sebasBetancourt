@@ -47,10 +47,10 @@ const SocialCard = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative mb-1 p-4 pb-1">
+      <div className="relative  p-6 pb-1">
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <div className="mb-1 flex items-center gap-3">
+            <div className=" flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
                 {icon}
               </div>
@@ -120,7 +120,7 @@ const SocialCard = ({
       >
         <div className="text-neutral-900 dark:text-neutral-100">
           <div className="mb-2 flex items-center justify-between text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-            <span>Conecta conmigo</span>
+            <span>Connect with me</span>
             <span>
               <LuArrowUpRight />
             </span>

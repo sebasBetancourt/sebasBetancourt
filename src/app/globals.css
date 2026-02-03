@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -64,7 +67,10 @@
   --color-destructive-foreground: var(--destructive-foreground);
 }
 
+
+
 :root {
+  font-family: var(--font-changa-one), system-ui, sans-serif;
   --radius: 0.65rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -166,7 +172,22 @@
     @apply border-border outline-ring/50;
   }
   body {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: oklab(0.921998 -0.00000908971 0.0000215769 / 0.9);
+
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+  .font-instrument {
+  font-family: var(--font-instrument), serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 60px);
+  line-height: 1;
+  color: lab(98.26 0 0);
+}
+
+
 }

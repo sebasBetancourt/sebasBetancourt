@@ -169,7 +169,7 @@ export function ImagesBadge({
       </motion.div>
 
       {/* Text */}
-      <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
+      <span className="text-m font-medium text-neutral-700 dark:text-neutral-200">
         {text}
       </span>
     </Component>
