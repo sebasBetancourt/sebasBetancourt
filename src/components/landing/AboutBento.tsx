@@ -1,11 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Avatar } from "../ui/avatar";
 import InfiniteSlider from "../ui/smoothui/infinite-slider";
-import { Globe } from "lucide-react";
+import { Globe, Speech } from "lucide-react";
 import Mundo from "../atoms/Globe";
 import { SocialCardExample } from "../atoms/CardContact";
 import {
@@ -16,10 +14,15 @@ import {
   SiPostgresql,
   SiMongodb,
   SiVercel,
-  SiDocker
+  SiDocker,
+  SiGooglemeet,
+  SiGmail,
+  SiChatbot
 } from "react-icons/si";
-import {FaAws} from "react-icons/fa"
+import {FaAws, FaHubspot} from "react-icons/fa"
+import FrameworkAgnostic from "../ui/forgeui/framework-agnostic";
 
+import FraudCard from "../ui/forgeui/fraud-card";
 
 function BentoCard({
   children,
@@ -53,12 +56,13 @@ function Flag({ label, img }: { label: string, img: string }) {
   );
 }
 
-function GlobeL() {
-  return (
-    <div className="absolute bottom-0 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
-  );
-}
 
+const blockedEmails = [
+  { email: "bad_actor+1@gamil.com", time: "Aug 9 at 14:09" },
+  { email: "spammer123@mailor.com", time: "Aug 10 at 11:23" },
+  { email: "fake+prmo@tempmail.com", time: "Aug 11 at 09:45" },
+  { email: "bot@disposablemail.org", time: "Aug 12 at 16:02" },
+];
 
 
 export default function AboutBento() {
@@ -67,17 +71,31 @@ export default function AboutBento() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-3 auto-rows-[320px]">
 
         {/* Collaboration */}
-        <BentoCard className="md:col-span-2">
-          <p className="text-xs uppercase tracking-widest text-neutral-400">
-            Collaboration
-          </p>
-          <h3 className="mt-3 text-lg text-neutral-200">
-            Priorizo ​​la colaboración con el cliente,
-            <br /> fomentando la comunicación abierta.
-          </h3>
+        <BentoCard className="md:col-span-2 flex justify-between ">
+          <div className="space-y-5">
+            <p className="text-xs uppercase tracking-widest text-neutral-400">
+              Colaboración
+            </p>
+          
+            <h3 className="mt-3 text-lg text-neutral-200">
+              Priorizo la colaboración con el cliente,
+              <br /> fomentando la comunicación abierta.
+            </h3>
+            <div className="flex justify-around">
+              <Speech className="h-20 w-20 text-neutral-400"></Speech>
 
-          <div className="absolute inset-x-0 bottom-4 flex justify-center">
-            <Avatar />
+            <div className="grid grid-cols-2 gap-2">
+              <SiGooglemeet className="w-8 h-8 text-green-700"></SiGooglemeet>
+              <SiGmail className="w-8 h-8 text-red-900"></SiGmail>
+              <SiChatbot className="w-8 h-8 text-neutral-100"></SiChatbot>
+              <FaHubspot className="w-8 h-8 text-orange-600"></FaHubspot>
+            </div>
+            </div>
+
+          </div>
+        
+          <div className=" h-full">
+            <FraudCard blockedEmails={blockedEmails} />
           </div>
         </BentoCard>
 
@@ -180,13 +198,11 @@ export default function AboutBento() {
               y desarrollar software confiable que resuelva problemas reales
               y pueda crecer con el tiempo.
             </p>
-
-            <p className="mt-2 text-m italic text-neutral-400">
-              Abierto a proyectos freelance, alianzas y colaboraciones a largo plazo.
-            </p>
           </div>
 
-          <span className="font-bold text-lg">Contactame:</span>
+           <FrameworkAgnostic
+            />
+
         </BentoCard>
 
         <BentoCard className="p-0">
