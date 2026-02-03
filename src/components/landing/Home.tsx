@@ -41,9 +41,9 @@ export default function HomeComponents(){
             </button>
           </NoiseBackground>
         </div>
-        <TextGenerateEffectProps className="text-4xl fonnt-extrabold text-center" words="Ayudo a convertir ideas en experiencias digitales fluidas."></TextGenerateEffectProps>
+        <TextGenerateEffectProps className="text-6xl font-extrabold font- text-center" words="Ayudo a convertir ideas en experiencias digitales fluidas."></TextGenerateEffectProps>
         <div className="flex gap-5">
-          <TypingText className="italic font-medium" pauseDuration={3000} loop={true} text={"Hola, Soy Sebastian Betancourt. Desarrollador de Software"}></TypingText>
+          <TypingText className=" font-mono text-lg" pauseDuration={3000} loop={true} text={"Hola, Soy Sebastian Betancourt. Desarrollador de Software"}></TypingText>
           <Avatar>
             <AvatarImage src="img/icon.png" />
             <AvatarFallback>CN</AvatarFallback>
