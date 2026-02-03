@@ -59,7 +59,7 @@ Con experiencia en soporte técnico de sistemas, he fortalecido la responsabilid
 
 ## Proyectos Destacados 📂
 
-Mis proyectos clave, en su mayoría colaborativos usando SCRUM, Conventional Commits y buenas prácticas Git. Incluyen documentación, instalación, uso y contribución. Aplican principios SOLID para escalabilidad.
+Mis proyectos clave, en su mayoría colaborativos usando SCRUM, Conventional Commits y buenas prácticas Git. Incluyen documentación, instalación, uso y contribución. Aplican principios SOLID para escalabilidad
 
 ### Edusync  
 - **Descripción**: Plataforma moderna y responsiva para la gestión académica de una institución educativa.
