@@ -1,7 +1,9 @@
-export default function AboutPage() {
+import { ProjectsSection } from "@/components/landing/projects/ProjectsSection";
+
+export default function ProjectsPage() {
   return (
-    <section>
-      <h1>Sobre mí</h1>
-    </section>
+    <main className="min-h-screen bg-[#0a0a0a]">
+      <ProjectsSection />
+    </main>
   );
 }
