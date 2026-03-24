@@ -77,6 +77,8 @@ export const metadata: Metadata = {
   },
 }
 
+import ContactCTA from "@/components/organisms/ContactCTA";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,6 +94,7 @@ export default function RootLayout({
 
           {children}
 
+          <ContactCTA />
           <Footer />
         </ThemeProvider>
       </body>

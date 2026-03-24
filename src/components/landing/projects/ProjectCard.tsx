@@ -88,7 +88,7 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
           
           {/* Header Text */}
           <div className="flex justify-between items-start gap-4 z-10 transition-transform duration-700 ease-out group-hover:-translate-y-2">
-            <p className="text-white md:text-[20px] font-medium leading-snug max-w-[85%]">
+            <p className="text-white md:text-[25px] font-instrument leading-snug max-w-[85%]">
               {project.visual.title}
             </p>
             <ArrowRightIcon className="text-white/70 w-5 h-5 shrink-0 transition-transform duration-500 group-hover:translate-x-1 group-hover:-rotate-45" />
@@ -153,7 +153,7 @@ function ProjectTextInner({ project }: { project: Project }) {
     <div className="flex flex-col font-sans">
         <div className="flex items-center gap-3 mb-3">
           <div className="h-[2px] w-6 bg-blue-500"></div>
-          <h3 className="text-2xl md:text-4xl font-bold text-white tracking-tight">
+          <h3 className="text-2xl md:text-5xl font-bold font-instrument text-white tracking-tight">
             {project.title}
           </h3>
         </div>
