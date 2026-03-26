@@ -36,10 +36,9 @@ export default function Footer() {
             </p>
             <ul className="space-y-3 text-sm">
               <li><a href="/" className="hover:text-white">Inicio</a></li>
-              <li><a href="/about" className="hover:text-white">Proyectos</a></li>
-              <li><a href="/projects" className="hover:text-white">Experiencia</a></li>
-              <li><a href="/blog" className="hover:text-white">Educacion</a></li>
-              <li><a href="/blog" className="hover:text-white">Sobre Mi</a></li>
+              <li><a href="/projects" className="hover:text-white">Proyectos</a></li>
+              <li><a href="/experience" className="hover:text-white">Experiencia</a></li>
+              <li><a href="/about" className="hover:text-white">Sobre Mi</a></li>
             </ul>
           </div>
 
@@ -49,11 +48,11 @@ export default function Footer() {
               Contactame
             </p>
             <ul className="space-y-3 text-sm">
-              <li><a href="/guestbook" className="hover:text-white">GitHub</a></li>
-              <li><a href="/uses" className="hover:text-white">Linkedin</a></li>
+              <li><a href="https://github.com/sebasBetancourt" className="hover:text-white">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/sebastian-betancourt-4a8b7b1b9/" className="hover:text-white">Linkedin</a></li>
               <li><a href="/bucket-list" className="hover:text-white">Whatsapp</a></li>
-              <li><a href="/attribution" className="hover:text-white">Gmail</a></li>
-              <li><a href="/attribution" className="hover:text-white">Hoja de Vida</a></li>
+              <li><a href="[EMAIL_ADDRESS]" className="hover:text-white">Gmail</a></li>
+              <li><a href="/cv.pdf" className="hover:text-white">Hoja de Vida</a></li>
             </ul>
           </div>
 

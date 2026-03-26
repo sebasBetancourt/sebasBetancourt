@@ -89,14 +89,12 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${instrumentSerif.variable} overflow-x-hidden`}
       >
-        <ThemeProvider>
           <Navbar />
 
           {children}
 
           <ContactCTA />
           <Footer />
-        </ThemeProvider>
       </body>
     </html>
   );

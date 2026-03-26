@@ -27,7 +27,7 @@ export function ProjectsSection() {
   }, []);
 
   return (
-    <div className="relative w-full bg-[#0a0a0a]">
+    <div className="relative w-full bg-[#0a0a0a] border border-white/10">
       <section className="pt-32 pb-1 px-6 md:px-12 w-full max-w-6xl mx-auto flex flex-col items-center">
         <div className="flex flex-col items-center space-y-3 text-center">
           <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-neutral-500 uppercase">

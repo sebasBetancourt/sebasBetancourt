@@ -1,7 +1,7 @@
-export default function AboutPage() {
+export default function AboutPage({ children }: { children: React.ReactNode }) {
   return (
     <section>
-      <h1>Sobre mí</h1>
+      {children}
     </section>
   );
 }

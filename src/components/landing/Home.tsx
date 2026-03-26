@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ImagesBadge } from "@/components/ui/images-badge";
 
 
+
 export default function HomeComponents(){
     return(
         <div className="flex h-fit w-full z-100 justify-center items-center">
@@ -37,7 +38,7 @@ export default function HomeComponents(){
             ]}
           >
             <button className="cursor-pointer text-sm rounded-full bg-linear-to-r from-neutral-100 via-neutral-100 to-white px-2 py-1 text-black shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)] transition-all duration-100 active:scale-98 dark:from-black dark:via-black dark:to-neutral-900 dark:text-white dark:shadow-[0px_1px_0px_0px_var(--color-neutral-950)_inset,0px_1px_0px_0px_var(--color-neutral-800)]">
-              Ver Proyectos &rarr;
+              <a href="/projects">Ver Proyectos &rarr;</a>
             </button>
           </NoiseBackground>
         </div>
