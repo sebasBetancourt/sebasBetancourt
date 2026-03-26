@@ -1,9 +1,16 @@
+"use client";
+import React from "react";
 import { FaGithub, FaLinkedin, FaWhatsappSquare } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { IoCall } from "react-icons/io5";
 
-
 export default function Footer() {
+  const [year, setYear] = React.useState<number | string>("");
+
+  React.useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="w-full border-t border-zinc-800 text-zinc-400">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -21,15 +28,15 @@ export default function Footer() {
                 <br />
                 Gracias por visitar mi sitio.
               </p>
-
-              <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-300 w-fit">
+ 
+               <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-300 w-fit">
                 <span className="h-2 w-2 rounded-full bg-green-500" />
                 Disponible para trabajar
               </div>
             </div>
           </div>
-
-          {/* General */}
+ 
+           {/* General */}
           <div>
             <p className="mb-4 text-xs uppercase tracking-widest text-zinc-500">
               General
@@ -41,8 +48,8 @@ export default function Footer() {
               <li><a href="/about" className="hover:text-white">Sobre Mi</a></li>
             </ul>
           </div>
-
-          {/* Specifics */}
+ 
+           {/* Specifics */}
           <div>
             <p className="mb-4 text-xs uppercase tracking-widest text-zinc-500">
               Contactame
@@ -55,8 +62,8 @@ export default function Footer() {
               <li><a href="/cv.pdf" className="hover:text-white">Hoja de Vida</a></li>
             </ul>
           </div>
-
-          {/* More */}
+ 
+           {/* More */}
           <div>
             <p className="mb-4 text-xs uppercase tracking-widest text-zinc-500">
               Más
@@ -68,13 +75,13 @@ export default function Footer() {
               <li><a href="/terms" className="hover:text-white">Términos</a></li>
             </ul>
           </div>
-
-        </div>
-
-        {/* Bottom bar */}
+ 
+         </div>
+ 
+         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-zinc-800 pt-6 text-xs text-zinc-500 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Sebastian Betancourt. Todos los derechos reservados.
+            © {year} Sebastian Betancourt. Todos los derechos reservados.
           </p>
           
           <div className="flex gap-4">

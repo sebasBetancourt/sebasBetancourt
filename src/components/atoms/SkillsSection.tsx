@@ -11,6 +11,23 @@ interface SkillsSectionProps {
   className: string;
 }
 
+function SkillIcon({ Icon, index, centerIndex, scrollYProgress }: { Icon: IconType, index: number, centerIndex: number, scrollYProgress: any }) {
+  const distanceFromCenter = index - centerIndex;
+
+  const x = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 100, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [Math.abs(distanceFromCenter) * 20, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 12, 0]);
+
+  return (
+    <motion.div
+      style={{ x, y, rotate }}
+      className="flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-900 shadow-lg"
+    >
+      <Icon className="h-8 w-8 text-white/90" />
+    </motion.div>
+  );
+}
+
 export default function SkillsSection({ icons, text1, text2, className }: SkillsSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -45,23 +62,15 @@ export default function SkillsSection({ icons, text1, text2, className }: Skills
         style={{ opacity, scale }}
         className="grid grid-cols-6 justify-items-center gap-2"
       >
-        {icons.map((Icon, i) => {
-          const distanceFromCenter = i - centerIndex;
-
-          const x = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 100, 0]);
-          const y = useTransform(scrollYProgress, [0, 1], [Math.abs(distanceFromCenter) * 20, 0]);
-          const rotate = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 12, 0]);
-
-          return (
-            <motion.div
-              key={i}
-              style={{ x, y, rotate }}
-              className="flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-900 shadow-lg"
-            >
-              <Icon className="h-8 w-8 text-white/90" />
-            </motion.div>
-          );
-        })}
+        {icons.map((Icon, i) => (
+          <SkillIcon
+            key={i}
+            Icon={Icon}
+            index={i}
+            centerIndex={centerIndex}
+            scrollYProgress={scrollYProgress}
+          />
+        ))}
       </motion.div>
     </section>
   );
