@@ -80,7 +80,9 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
               <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
               <text className="text-[10px] uppercase font-bold tracking-[0.2em]" fill="currentColor">
                 <textPath href="#circlePath" startOffset="0%">
-                  {`${t.projects.details} • ${t.projects.details} •`} 
+                  {project.links?.demo
+                    ? `${t.projects.details} • ${t.projects.details} •`
+                    : `${t.projects.building} • ${t.projects.building} •`}
                 </textPath>
               </text>
             </svg>
@@ -160,6 +162,12 @@ function ProjectTextInner({ project }: { project: Project }) {
           <h3 className="text-2xl md:text-4xl font-bold font-instrument text-white tracking-tight">
             {project.title}
           </h3>
+          {project.status === "in-progress" && (
+            <span className="flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-amber-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+              {t.projects.inProgress}
+            </span>
+          )}
         </div>
         
         <p className="text-neutral-400 text-sm mb-5 leading-relaxed font-light">
@@ -174,6 +182,23 @@ function ProjectTextInner({ project }: { project: Project }) {
             </li>
           ))}
         </ul>
+
+        {/* Roadmap */}
+        {project.roadmap && (
+          <div className="mb-5">
+            <p className="mb-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+              {t.projects.roadmap} · {project.roadmap.filter((step) => step.done).length}/{project.roadmap.length}
+            </p>
+            <ol className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
+              {project.roadmap.map((step, idx) => (
+                <li key={idx} className={`flex items-start gap-2 text-[12px] leading-snug ${step.done ? "text-emerald-300" : "text-neutral-500"}`}>
+                  <span className="font-mono shrink-0">{step.done ? "✓" : `${idx + 1}.`}</span>
+                  <span>{step.label}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-1.5 mt-auto">
