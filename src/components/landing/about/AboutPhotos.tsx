@@ -3,17 +3,20 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ABOUT_DATA } from "./data";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export function AboutPhotos() {
+  const { lang } = useLang();
+  const photos = ABOUT_DATA(lang).photos;
   const [activeIndex, setActiveIndex] = useState(() => {
-    const yoIndex = ABOUT_DATA.photos.findIndex(p => p.caption === "Yo");
-    return yoIndex !== -1 ? yoIndex : ABOUT_DATA.photos.length - 1;
+    const meIndex = photos.findIndex(p => p.isMe);
+    return meIndex !== -1 ? meIndex : photos.length - 1;
   });
 
   return (
     <div className="relative w-[100%] aspect-square md:aspect-auto md:h-[500px] flex flex-col items-center justify-center py-10">
       <div className="relative w-[300px] h-[400px]">
-        {ABOUT_DATA.photos.map((photo, idx) => (
+        {photos.map((photo, idx) => (
           <motion.div
             key={idx}
             className="absolute inset-0 rounded-3xl overflow-hidden border border-white/10 shadow-2xl cursor-pointer bg-neutral-900"
@@ -52,7 +55,7 @@ export function AboutPhotos() {
           exit={{ opacity: 0, y: -10 }}
           className="mt-8 text-neutral-400 font-instrument text-lg"
         >
-          {ABOUT_DATA.photos[activeIndex].caption}
+          {photos[activeIndex].caption}
         </motion.p>
       </AnimatePresence>
     </div>

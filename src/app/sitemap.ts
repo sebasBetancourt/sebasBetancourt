@@ -17,19 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${siteUrl}/education`,
-      lastModified: new Date(),
-    },
-    {
       url: `${siteUrl}/experience`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${siteUrl}/uses`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${siteUrl}/contact`,
       lastModified: new Date(),
     },
   ]

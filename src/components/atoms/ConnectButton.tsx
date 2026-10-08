@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ContactDialog } from "@/components/ui/contact-dialog";
+import { useLang } from "@/i18n/LanguageProvider";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +14,7 @@ export function ConnectButton({
   className?: string;
 }) {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const { t } = useLang();
 
   return (
     <div className="relative inline-block">
@@ -48,7 +50,7 @@ export function ConnectButton({
 
         {/* contenido */}
         <span className="relative z-10 font-medium text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
-          Contactame
+          {t.hero.contact}
         </span>
 
         <motion.span

@@ -2,18 +2,21 @@
 
 import React from "react";
 import { ABOUT_DATA } from "./data";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export function AboutHero() {
+  const { lang } = useLang();
+  const about = ABOUT_DATA(lang);
   return (
     <div className="flex flex-col gap-8 max-w-xl">
       {/* Subtitle */}
       <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-neutral-500 uppercase">
-        {ABOUT_DATA.subtitle}
+        {about.subtitle}
       </span>
 
       {/* Main Title */}
       <h1 className="font-instrument leading-[1.1]" style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }}>
-        <span className="text-white block">{ABOUT_DATA.title.prefix}</span>
+        <span className="text-white block">{about.title.prefix}</span>
         <span
           className="italic"
           style={{
@@ -22,13 +25,13 @@ export function AboutHero() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          {ABOUT_DATA.title.highlight}
+          {about.title.highlight}
         </span>
       </h1>
 
       {/* Paragraphs */}
       <div className="flex flex-col gap-6">
-        {ABOUT_DATA.paragraphs.map((text, idx) => (
+        {about.paragraphs.map((text, idx) => (
           <p key={idx} className="text-neutral-400 text-sm md:text-base leading-relaxed text-balance">
             {text}
           </p>
@@ -37,7 +40,7 @@ export function AboutHero() {
 
       {/* Socials */}
       <div className="flex items-center gap-6 mt-4">
-        {ABOUT_DATA.socials.map((social, idx) => (
+        {about.socials.map((social, idx) => (
           <a
             key={idx}
             href={social.url}

@@ -1,14 +1,16 @@
 "use client";
 
 import { FloatingNav } from "@/components/ui/floating-navbar";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export default function NavBar() {
+  const { t } = useLang();
   const navItems = [
-    { name: "Inicio", link: "/"  },
-    { name: "Proyectos", link: "/projects" },
-    { name: "Experiencia", link: "/experience" },
-    { name: "Sobre mí", link: "/about" },
-    { name: "Contacto", link: "/contact" },
+    { name: t.nav.home, link: "/"  },
+    { name: t.nav.projects, link: "/projects" },
+    { name: t.nav.experience, link: "/experience" },
+    { name: t.nav.about, link: "/about" },
+    { name: t.nav.contact, link: "/contact" },
   ];
 
   return <FloatingNav navItems={navItems} />;

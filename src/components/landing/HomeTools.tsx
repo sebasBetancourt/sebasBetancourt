@@ -2,121 +2,82 @@
 
 import SkillsSection from "../atoms/SkillsSection";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiCss3,
+  SiGo,
   SiNodedotjs,
-  SiDocker,
-  SiPython,
-  SiTensorflow,
-  SiPandas,
-  SiScikitlearn,
-  SiGit,
-  SiLinux,
-  SiPostgresql,
-  SiMongodb,
-  SiJupyter,
+  SiTypescript,
   SiFastify,
-  SiVuedotjs,
-  SiNuxtdotjs,
   SiExpress,
   SiPrisma,
-  SiJsonwebtokens,
-  SiFastapi,
-  SiDjango,
-  SiPydantic,
-  SiVercel,
-  SiHostinger,
-  SiN8N,
-  SiLangchain,
-  SiOpenai,
-  SiNumpy,
-  SiScipy,
+  SiZod,
+  SiPython,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiDocker,
+  SiNginx,
+  SiLinux,
+  SiGit,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiShadcnui,
+  SiVite,
 } from "react-icons/si";
-import { TbMathSymbols } from "react-icons/tb";
-import { FaAws } from "react-icons/fa";
+import { useLang } from "@/i18n/LanguageProvider";
 
 
 export default function HomeTools() {
+  const { t } = useLang();
   return (
-    <div className="w-full text-center py-20 px-10 flex flex-col gap-24">
+    <div className="w-full text-center py-20 px-4 md:px-10 flex flex-col gap-24">
       <p className="text-lg text-center font-instrument tracking-widest text-neutral-400">
-        MIS SKILLS
+        {t.skills.heading}
       </p>
 
-      {/* Desarrollo de Software */}
+      {/* Backend */}
       <SkillsSection
         icons={[
-          SiReact,
-          SiVuedotjs,
-          SiNextdotjs,
-          SiNuxtdotjs,
-          SiTailwindcss,
-          SiCss3,
-
+          SiGo,
           SiNodedotjs,
           SiTypescript,
           SiFastify,
           SiExpress,
           SiPrisma,
-          SiJsonwebtokens,
-
-
+          SiZod,
           SiPython,
-          SiFastapi,
-          SiDjango,
-          SiPydantic,
-
-          SiPostgresql,
-          SiMongodb,
-
-
-          SiDocker,
-          SiGit,
-          SiLinux,
-          SiVercel,
-          SiHostinger,
-          FaAws
-          
         ]}
-        text1="Tecnologias"
-        text2="Desarrollo de Software"
+        text1={t.skills.backend[0]}
+        text2={t.skills.backend[1]}
         className="bg-gradient-to-r from-fuchsia-800 font-changa to-slate-800 bg-clip-text text-transparent"
       />
 
-      {/* IA / Machine Learning */}
+      {/* Datos e infraestructura */}
       <SkillsSection
         icons={[
-          SiN8N,
-          SiLangchain,
-          SiPython,
-          SiFastapi,
-          SiOpenai,
-
-
+          SiPostgresql,
+          SiMongodb,
+          SiRedis,
+          SiDocker,
+          SiNginx,
+          SiLinux,
+          SiGit,
         ]}
-        text1="Tecnologias"
-        text2="Automatizacion IA"
+        text1={t.skills.data[0]}
+        text2={t.skills.data[1]}
         className="bg-gradient-to-r from-fuchsia-700 to-slate-700 bg-clip-text text-transparent"
       />
 
-      {/* Análisis de Datos */}
+      {/* Frontend */}
       <SkillsSection
         icons={[
-          SiPython,
-          SiPandas,
-          SiNumpy,
-          SiScipy,
-          SiJupyter,
-          SiPostgresql,
-          SiMongodb,
-          TbMathSymbols
-
+          SiReact,
+          SiNextdotjs,
+          SiTailwindcss,
+          SiShadcnui,
+          SiVite,
         ]}
-        text1="Herramientas"
-        text2="Análisis de Datos"
+        text1={t.skills.frontend[0]}
+        text2={t.skills.frontend[1]}
         className="bg-gradient-to-r from-fuchsia-600 to-slate-600 bg-clip-text text-transparent"
       />
     </div>

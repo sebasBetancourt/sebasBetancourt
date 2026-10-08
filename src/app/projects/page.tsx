@@ -4,7 +4,7 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] border border-white/[0.07] flex items-center justify-center">
       <div
-        className="border border-white/10 flex flex-col items-center justify-center w-[70%] px-14"
+        className="border border-white/10 flex flex-col items-center justify-center w-full md:w-[70%] px-2 md:px-14"
         style={{
           backgroundImage: `repeating-linear-gradient(
             -45deg,

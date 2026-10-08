@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { FaStar, FaCodeBranch, FaUsers, FaBook } from "react-icons/fa";
+import { useLang } from "@/i18n/LanguageProvider";
 
 type GitHubStats = {
   followers: number;
@@ -11,6 +12,7 @@ type GitHubStats = {
 
 export function GithubContributions() {
   const githubUser = "sebasBetancourt";
+  const { t } = useLang();
   const [stats, setStats] = useState<GitHubStats | null>(null);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export function GithubContributions() {
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-10">
         <h2 className="font-instrument" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1 }}>
-          <span className="text-white">Codigo & </span>
+          <span className="text-white">{t.experience.codeTitle[0]}</span>
           <span
             className="italic"
             style={{
@@ -43,7 +45,7 @@ export function GithubContributions() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Colaboraciones
+            {t.experience.codeTitle[1]}
           </span>
         </h2>
       </div>
@@ -80,7 +82,7 @@ export function GithubContributions() {
             </div>
 
             <p className="text-neutral-600 text-[10px] font-mono mt-2 tracking-wide">
-              contribuciones en el último año
+              {t.experience.contributions}
             </p>
           </div>
 

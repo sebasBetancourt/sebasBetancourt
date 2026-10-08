@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ContactDialog } from "./contact-dialog";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export const FloatingNav = ({
   navItems,
@@ -23,6 +24,7 @@ export const FloatingNav = ({
   const [visible, setVisible] = useState(true);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const pathname = usePathname();
+  const { lang, setLang } = useLang();
 
   useMotionValueEvent(scrollY, "change", (current) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -95,6 +97,24 @@ export const FloatingNav = ({
               </Link>
             );
           })}
+
+          <button
+            onClick={() => setLang(lang === "en" ? "es" : "en")}
+            aria-label={lang === "en" ? "Cambiar a español" : "Switch to English"}
+            className="ml-1.5 flex items-center rounded-full border border-white/10 bg-white/[0.04] p-1 text-[11px] font-mono tracking-wider cursor-pointer"
+          >
+            {(["en", "es"] as const).map((code) => (
+              <span
+                key={code}
+                className={cn(
+                  "px-2 py-1 rounded-full uppercase transition-colors duration-300",
+                  lang === code ? "bg-white text-black" : "text-neutral-400 hover:text-white"
+                )}
+              >
+                {code}
+              </span>
+            ))}
+          </button>
         </motion.div>
       </AnimatePresence>
 

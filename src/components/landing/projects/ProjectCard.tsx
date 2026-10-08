@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import { useLang } from "@/i18n/LanguageProvider";
 import { Project } from "./data";
 
 export function EyeIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -41,6 +42,7 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const { t } = useLang();
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!cardRef.current) return;
@@ -77,7 +79,7 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
               <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
               <text className="text-[10px] uppercase font-bold tracking-[0.2em]" fill="currentColor">
                 <textPath href="#circlePath" startOffset="0%">
-                  VER  DETALLES • VER  DETALLES • 
+                  {`${t.projects.details} • ${t.projects.details} •`} 
                 </textPath>
               </text>
             </svg>
@@ -149,6 +151,7 @@ export function ProjectText({ project, isActive }: { project: Project; isActive:
 }
 
 function ProjectTextInner({ project }: { project: Project }) {
+  const { t } = useLang();
   return (
     <div className="flex flex-col font-sans">
         <div className="flex items-center gap-3 mb-3">
@@ -196,7 +199,7 @@ function ProjectTextInner({ project }: { project: Project }) {
             {project.links.repo && (
               <a href={project.links.repo} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors">
                 <GithubIcon className="w-4 h-4" />
-                <span>Repositorio</span>
+                <span>{t.projects.repo}</span>
               </a>
             )}
             {project.links.backend && (

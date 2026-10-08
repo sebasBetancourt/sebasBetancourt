@@ -1,26 +1,32 @@
+"use client";
+
 import SocialCard from '@/components/ui/forgeui/social-card';
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { GiStrikingDiamonds } from "react-icons/gi";
+import { CONTACT } from "@/lib/contact";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export function SocialCardExample() {
+  const { t } = useLang();
 
   return (
       <SocialCard
         image="/img/icon.png"
-        title="Contactame"
+        title={t.contact.cardTitle}
         name="Sebastian Betancourt"
-        pitch="Explora mis proyectos, y conecta conmigo."
+        pitch={t.contact.cardPitch}
+        connectLabel={t.contact.cardConnect}
         icon={<GiStrikingDiamonds />}
         buttons={[
           {
             label: "Linkedin",
             icon: <FaLinkedin />,
-            link: "https://www.linkedin.com/in/sebastian-betancourt-605654293",
+            link: CONTACT.linkedin,
           },
           {
             label: "Github",
             icon: <FaGithub />,
-            link: "https://github.com/sebasBetancourt",
+            link: CONTACT.github,
           },
         ]}
       />
