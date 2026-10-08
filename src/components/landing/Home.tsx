@@ -23,9 +23,9 @@ export default function HomeComponents(){
           <ImagesBadge
         text={t.hero.badge}
         images={[
+          "/img/pelixflix/home.png",
+          "/img/pelixflix/browse.png",
           "/img/pixelflix.png",
-          "/img/OrbisPro/1.PNG",
-          "/img/OrbisPro/2.PNG",
         ]}
         folderSize={{ width: 30, height: 20 }}
         teaserImageSize={{ width: 20, height: 18 }}

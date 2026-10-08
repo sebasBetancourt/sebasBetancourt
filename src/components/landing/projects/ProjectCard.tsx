@@ -61,6 +61,7 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={() => project.links?.demo && window.open(project.links.demo, "_blank", "noopener,noreferrer")}
         data-index={index}
         className="project-visual-card group relative w-full aspect-square lg:aspect-auto lg:h-[370px] p-3 md:p-2 bg-neutral-900 border border-white/10 rounded-[2.5rem] shadow-xl transition-transform duration-500 hover:scale-[1.03] cursor-none overflow-hidden"
       >
@@ -141,7 +142,7 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
 export function ProjectText({ project, isActive }: { project: Project; isActive: boolean }) {
   return (
     <div 
-      className={`absolute inset-0 flex flex-col justify-center px-4 lg:pl-16 lg:pr-8 transition-opacity duration-500 ease-in-out ${
+      className={`absolute inset-0 flex flex-col justify-center overflow-y-auto py-8 px-4 lg:pl-12 lg:pr-6 transition-opacity duration-500 ease-in-out ${
         isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
       }`}
     >
@@ -156,30 +157,30 @@ function ProjectTextInner({ project }: { project: Project }) {
     <div className="flex flex-col font-sans">
         <div className="flex items-center gap-3 mb-3">
           <div className="h-[2px] w-6 bg-blue-500"></div>
-          <h3 className="text-2xl md:text-5xl font-bold font-instrument text-white tracking-tight">
+          <h3 className="text-2xl md:text-4xl font-bold font-instrument text-white tracking-tight">
             {project.title}
           </h3>
         </div>
         
-        <p className="text-neutral-400 text-sm md:text-base mb-8 leading-relaxed font-light">
+        <p className="text-neutral-400 text-sm mb-5 leading-relaxed font-light">
           {project.description}
         </p>
 
-        <ul className="space-y-4 mb-8">
+        <ul className="space-y-2.5 mb-5">
           {project.features.map((feature, idx) => (
-            <li key={idx} className="flex gap-3 items-start text-sm md:text-[15px] text-neutral-300">
+            <li key={idx} className="flex gap-3 items-start text-[13px] text-neutral-300">
               <Star4Icon className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
-              <span className="leading-relaxed">{feature}</span>
+              <span className="leading-snug">{feature}</span>
             </li>
           ))}
         </ul>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mt-auto">
+        <div className="flex flex-wrap gap-1.5 mt-auto">
           {project.techStack.map((tech, idx) => (
             <div 
               key={idx} 
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-[11px] md:text-xs text-white/80 font-medium tracking-wide shadow-sm"
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-[11px] md:text-xs text-white/80 font-medium tracking-wide shadow-sm"
             >
               {tech.icon ? (
                 <span className="w-3.5 h-3.5 flex items-center justify-center" style={{ color: tech.color || "white" }}>
@@ -195,7 +196,13 @@ function ProjectTextInner({ project }: { project: Project }) {
 
         {/* Links */}
         {project.links && (
-          <div className="flex flex-wrap gap-4 mt-6 pt-6 border-t border-white/5">
+          <div className="flex flex-wrap items-center gap-4 mt-5 pt-5 border-t border-white/5">
+            {project.links.demo && (
+              <a href={project.links.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-neutral-200 transition-colors">
+                <EyeIcon className="w-4 h-4" />
+                <span>{t.projects.demo}</span>
+              </a>
+            )}
             {project.links.repo && (
               <a href={project.links.repo} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors">
                 <GithubIcon className="w-4 h-4" />
@@ -205,16 +212,19 @@ function ProjectTextInner({ project }: { project: Project }) {
             {project.links.backend && (
               <a href={project.links.backend} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors">
                 <GithubIcon className="w-4 h-4" />
-                <span>Backend</span>
+                <span>{t.projects.backendRepo}</span>
               </a>
             )}
             {project.links.frontend && (
               <a href={project.links.frontend} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors">
                 <GithubIcon className="w-4 h-4" />
-                <span>Frontend</span>
+                <span>{t.projects.frontendRepo}</span>
               </a>
             )}
           </div>
+        )}
+        {project.links?.demo && (
+          <p className="mt-3 text-[11px] text-neutral-500">{t.projects.demoNote}</p>
         )}
     </div>
   );
