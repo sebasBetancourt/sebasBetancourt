@@ -4,8 +4,9 @@ import {
   SiExpress, SiMongodb, SiPostgresql, SiGit, SiDocker,
   SiJavascript, SiSwagger, SiPostman, SiDigitalocean, SiLinux,
   SiFastify, SiJira, SiHtml5, SiCss3,
+  SiGo, SiRedis, SiVite, SiShadcnui, SiNginx, SiZod, SiGooglecalendar,
 } from "react-icons/si";
-import { FaChurch } from "react-icons/fa";
+import { FaChurch, FaMicrosoft } from "react-icons/fa";
 
 export type DescriptionItem = {
   label: string;
@@ -19,13 +20,93 @@ export type Experience = {
   period: string;
   type: string;
   location: string;
-  icon: "waiwa" | "iasd";
+  icon: "waiwa" | "iasd" | "adeptos";
   descriptions: DescriptionItem[];
   techStack: { name: string; icon?: IconType; color?: string }[];
   links?: { label: string; url: string }[];
 };
 
 export const EXPERIENCE_DATA: Experience[] = [
+  {
+    company: "Adeptos AI",
+    role: "Desarrollador de Software · IA & Integraciones",
+    period: "ABR 2026 — OCT 2026",
+    type: "Plataforma SaaS · CRM con Agentes de IA",
+    location: "Remoto",
+    icon: "adeptos",
+    descriptions: [
+      {
+        label: "Agentes de IA & MCP",
+        text: "Construí desde cero un servidor MCP (Model Context Protocol) en Node.js y TypeScript con validación en Zod, que permite a los agentes de IA operar el CRM: catálogo e inventario, órdenes, reservas, citas y oportunidades, con credenciales de cliente por negocio y despliegue aislado en Docker.",
+        highlights: [
+          { word: "servidor MCP (Model Context Protocol)", color: "#a855f7" },
+          { word: "agentes de IA", color: "#f472b6" },
+        ],
+      },
+      {
+        label: "Integración con Outlook & Microsoft Graph",
+        text: "Implementé la conexión con OAuth 2.0 (MSAL + PKCE) contra Microsoft Entra, sincronización por webhooks con renovación de suscripciones y delta sync con IDs inmutables, rate limiting por buzón compartido entre réplicas con Redis y una interfaz común para Google y Outlook Calendar.",
+        highlights: [
+          { word: "OAuth 2.0 (MSAL + PKCE)", color: "#60a5fa" },
+          { word: "delta sync", color: "#22d3ee" },
+          { word: "Redis", color: "#ef4444" },
+        ],
+      },
+      {
+        label: "Sincronización Bidireccional",
+        text: "Integré GoHighLevel en ambas direcciones (API v2 y webhooks) para contactos, oportunidades, pipelines, citas y notas, resolviendo el enrutamiento multi-tenant de eventos y la migración de datos históricos a producción.",
+        highlights: [
+          { word: "GoHighLevel", color: "#34d399" },
+          { word: "multi-tenant", color: "#f97316" },
+        ],
+      },
+      {
+        label: "Backend en Go & Tiempo Real",
+        text: "Desarrollé APIs REST con Go, Fiber y GORM sobre PostgreSQL, actualizaciones en tiempo real con SSE y migraciones automáticas al arrancar que reemplazaron los scripts SQL manuales.",
+        highlights: [
+          { word: "Go, Fiber y GORM", color: "#00ADD8" },
+          { word: "SSE", color: "#a855f7" },
+        ],
+      },
+      {
+        label: "Producto SaaS de Punta a Punta",
+        text: "Entregué módulos completos en React 19, TypeScript y shadcn/ui: calendarios, contactos con importación CSV/Excel y listas inteligentes, Kanban de oportunidades con scroll infinito, productos con variantes, planes, programa de afiliados y formularios públicos que crean oportunidades automáticamente.",
+        highlights: [
+          { word: "React 19", color: "#61DAFB" },
+          { word: "Kanban de oportunidades", color: "#f472b6" },
+        ],
+      },
+      {
+        label: "Diagnóstico en Producción",
+        text: "Ante una caída intermitente del dashboard medí uno por uno los servidores detrás de nginx y aislé una espera exacta de 60 segundos; con esos datos el equipo encontró la causa raíz en un firewall.",
+        highlights: [
+          { word: "nginx", color: "#009639" },
+          { word: "causa raíz", color: "#ef4444" },
+        ],
+      },
+    ],
+    techStack: [
+      { name: "Go", icon: SiGo, color: "#00ADD8" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "Zod", icon: SiZod, color: "#3E67B1" },
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Vite", icon: SiVite, color: "#646CFF" },
+      { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "shadcn/ui", icon: SiShadcnui, color: "#FFFFFF" },
+      { name: "Microsoft Graph", icon: FaMicrosoft, color: "#00A4EF" },
+      { name: "Google Calendar", icon: SiGooglecalendar, color: "#4285F4" },
+      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "Nginx", icon: SiNginx, color: "#009639" },
+      { name: "Git", icon: SiGit, color: "#F05032" },
+    ],
+    links: [
+      { label: "Adeptos AI", url: "https://adeptos.ai/" },
+      { label: "Hamill (cliente)", url: "https://hamilll.com/" },
+    ],
+  },
   {
     company: "Colectivo Waiwa SAS",
     role: "Desarrollador Full Stack",
