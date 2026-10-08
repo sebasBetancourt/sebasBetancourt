@@ -21,6 +21,19 @@ function IasdIcon() {
   );
 }
 
+function AdeptosIcon() {
+  return (
+    <div
+      className="w-15 h-15 rounded-sm border border-white/10 flex items-center justify-center text-white font-bold text-2xl font-instrument"
+      style={{ background: "linear-gradient(135deg, #FF2D8D, #a855f7, #3b82f6)" }}
+    >
+      A
+    </div>
+  );
+}
+
+const COMPANY_ICONS = { waiwa: WaiwaIcon, iasd: IasdIcon, adeptos: AdeptosIcon };
+
 /* ─── Highlighted Text Renderer ─── */
 function HighlightedText({ text, highlights }: { text: string; highlights?: { word: string; color: string }[] }) {
   if (!highlights || highlights.length === 0) return <>{text}</>;
@@ -70,7 +83,7 @@ function DescriptionBlock({ item }: { item: DescriptionItem }) {
 
 /* ─── Experience Card (Grid Row) ─── */
 export function ExperienceCard({ experience }: { experience: Experience }) {
-  const Icon = experience.icon === "iasd" ? IasdIcon : WaiwaIcon;
+  const Icon = COMPANY_ICONS[experience.icon];
 
   return (
     <div className="experience-card grid grid-cols-1 md:grid-cols-[240px_1fr] gap-0 w-full border-y border-white/[0.06]">
