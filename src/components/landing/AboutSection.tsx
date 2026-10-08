@@ -21,7 +21,7 @@ export function AboutSection() {
           </p>
         </div>
         <img
-          src="/img/pixelflix.png"
+          src="/img/pelixflix/home.png"
           width={500}
           height={500}
           alt="PelixFlix"
@@ -52,10 +52,10 @@ export function AboutSection() {
           </p>
         </div>
         <img
-          src="/img/OrbisPro/1.PNG"
+          src="/img/pelixflix/browse.png"
           width={500}
           height={500}
-          alt="OrbisPro CLI"
+          alt="PelixFlix"
           className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
         />
       </WobbleCard>
