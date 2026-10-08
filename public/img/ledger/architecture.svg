@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="ui-monospace, Menlo, monospace">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="800" height="520" rx="22" fill="#07130f"/>
+  <text x="32" y="44" fill="#e2e8f0" font-size="18" font-weight="700">ledger · architecture</text>
+  <text x="32" y="66" fill="#64748b" font-size="12">double-entry payments engine that never loses or duplicates money</text>
+
+  <rect x="32" y="120" width="140" height="70" rx="12" fill="#0f1a16" stroke="#334155"/>
+  <text x="102" y="150" fill="#e2e8f0" font-size="13" text-anchor="middle">Client</text>
+  <text x="102" y="170" fill="#64748b" font-size="10" text-anchor="middle">Idempotency-Key</text>
+
+  <rect x="230" y="110" width="170" height="90" rx="12" fill="#0f1a16" stroke="#00ADD8"/>
+  <text x="315" y="140" fill="#e2e8f0" font-size="13" text-anchor="middle">Transfer API (Go)</text>
+  <text x="315" y="162" fill="#94a3b8" font-size="10" text-anchor="middle">rate limit · validation</text>
+  <text x="315" y="180" fill="#94a3b8" font-size="10" text-anchor="middle">saga orchestration</text>
+
+  <rect x="460" y="96" width="308" height="190" rx="14" fill="#0f1a16" stroke="#336791"/>
+  <text x="614" y="124" fill="#e2e8f0" font-size="13" text-anchor="middle">PostgreSQL · one transaction</text>
+  <rect x="480" y="140" width="130" height="58" rx="8" fill="#0b1310" stroke="#1f3b33"/>
+  <text x="545" y="164" fill="#34d399" font-size="11" text-anchor="middle">entries</text>
+  <text x="545" y="182" fill="#64748b" font-size="10" text-anchor="middle">debit + credit = 0</text>
+  <rect x="620" y="140" width="130" height="58" rx="8" fill="#0b1310" stroke="#1f3b33"/>
+  <text x="685" y="164" fill="#34d399" font-size="11" text-anchor="middle">balances</text>
+  <text x="685" y="182" fill="#64748b" font-size="10" text-anchor="middle">ordered row locks</text>
+  <rect x="480" y="210" width="270" height="58" rx="8" fill="#0b1310" stroke="#1f3b33"/>
+  <text x="615" y="234" fill="#34d399" font-size="11" text-anchor="middle">outbox</text>
+  <text x="615" y="252" fill="#64748b" font-size="10" text-anchor="middle">event written atomically with the transfer</text>
+
+  <rect x="480" y="340" width="130" height="70" rx="12" fill="#0f1a16" stroke="#27AAE1"/>
+  <text x="545" y="370" fill="#e2e8f0" font-size="13" text-anchor="middle">Event bus</text>
+  <text x="545" y="390" fill="#64748b" font-size="10" text-anchor="middle">NATS / Kafka</text>
+
+  <rect x="650" y="340" width="118" height="70" rx="12" fill="#0f1a16" stroke="#a855f7"/>
+  <text x="709" y="370" fill="#e2e8f0" font-size="13" text-anchor="middle">Merchant</text>
+  <text x="709" y="390" fill="#64748b" font-size="10" text-anchor="middle">signed webhooks</text>
+
+  <rect x="230" y="340" width="170" height="70" rx="12" fill="#0f1a16" stroke="#f59e0b"/>
+  <text x="315" y="370" fill="#e2e8f0" font-size="13" text-anchor="middle">Reconciliation</text>
+  <text x="315" y="390" fill="#64748b" font-size="10" text-anchor="middle">nightly job · alerts</text>
+
+  <rect x="32" y="340" width="140" height="70" rx="12" fill="#0f1a16" stroke="#DC382D"/>
+  <text x="102" y="370" fill="#e2e8f0" font-size="13" text-anchor="middle">Redis</text>
+  <text x="102" y="390" fill="#64748b" font-size="10" text-anchor="middle">keys · rate limits</text>
+
+  <path d="M172 155H228" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M400 155H458" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M545 286V338" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M610 375H648" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M460 260L402 345" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M260 200L150 338" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="32" y="440" width="736" height="50" rx="12" fill="#0b1310" stroke="#1f3b33"/>
+  <text x="400" y="470" fill="#64748b" font-size="11" text-anchor="middle">SERIALIZABLE / ordered locks · outbox pattern · sagas · k6 load tests · chaos tests</text>
+</svg>
