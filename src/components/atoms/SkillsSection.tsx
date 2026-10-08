@@ -60,7 +60,7 @@ export default function SkillsSection({ icons, text1, text2, className }: Skills
       {/* Icons Grid */}
       <motion.div
         style={{ opacity, scale }}
-        className="grid grid-cols-6 justify-items-center gap-2"
+        className="grid grid-cols-4 sm:grid-cols-8 justify-items-center gap-2"
       >
         {icons.map((Icon, i) => (
           <SkillIcon

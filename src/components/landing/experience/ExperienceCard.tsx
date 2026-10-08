@@ -23,11 +23,8 @@ function IasdIcon() {
 
 function AdeptosIcon() {
   return (
-    <div
-      className="w-15 h-15 rounded-sm border border-white/10 flex items-center justify-center text-white font-bold text-2xl font-instrument"
-      style={{ background: "linear-gradient(135deg, #FF2D8D, #a855f7, #3b82f6)" }}
-    >
-      A
+    <div className="w-15 h-15 shrink-0 rounded-full overflow-hidden border border-white/20 bg-white">
+      <img className="w-full h-full object-cover" src="/adeptos.png" alt="Adeptos AI" />
     </div>
   );
 }

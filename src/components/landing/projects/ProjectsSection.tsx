@@ -3,9 +3,12 @@
 import { useEffect, useState, useRef } from "react";
 import { ProjectVisual, ProjectText } from "./ProjectCard";
 import { PROJECTS_DATA } from "./data";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export function ProjectsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { lang, t } = useLang();
+  const projects = PROJECTS_DATA[lang];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,11 +34,11 @@ export function ProjectsSection() {
       <section className="pt-32 pb-1 px-6 md:px-12 w-full max-w-6xl mx-auto flex flex-col items-center">
         <div className="flex flex-col items-center space-y-3 text-center">
           <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-neutral-500 uppercase">
-            Proyectos
+            {t.projects.label}
           </span>
           <h2 className="text-9xl lg:text-lg font-semibold tracking-tight">
-            <span className="text-white font-instrument">Proyectos </span>
-            <span className="text-[#FF2D8D] italic font-instrument">destacados </span>
+            <span className="text-white font-instrument">{t.projects.title[0]}</span>
+            <span className="text-[#FF2D8D] italic font-instrument">{t.projects.title[1]}</span>
           </h2>
         </div>
       </section>
@@ -44,14 +47,14 @@ export function ProjectsSection() {
         
         {/* Left Side: Scrolling Visuals */}
         <div className="w-full lg:w-[45%] flex flex-col gap-20 lg:gap-[40vh] lg:py-[15vh]">
-          {PROJECTS_DATA.map((project, index) => (
+          {projects.map((project, index) => (
             <ProjectVisual key={`visual-${index}`} project={project} index={index} />
           ))}
         </div>
 
         {/* Right Side: Sticky Text Container */}
         <div className="hidden lg:flex w-full lg:w-[55%] lg:sticky lg:top-0 lg:h-screen items-center justify-center relative">
-          {PROJECTS_DATA.map((project, index) => (
+          {projects.map((project, index) => (
             <ProjectText key={`text-${index}`} project={project} isActive={activeIndex === index} />
           ))}
         </div>

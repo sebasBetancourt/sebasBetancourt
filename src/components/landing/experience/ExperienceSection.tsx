@@ -5,10 +5,12 @@ import { ExperienceCard } from "./ExperienceCard";
 import { GithubContributions } from "./GithubContributions";
 import { EXPERIENCE_DATA } from "./data";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export function ExperienceSection() {
   const cardsContainerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { lang, t } = useLang();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,9 +40,9 @@ export function ExperienceSection() {
 
         <div className="flex flex-col items-center space-y-1 text-center">
           <h2 className="font-instrument" style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", lineHeight: 1.1 }}>
-            <span className="text-white">Experiencias</span>
+            <span className="text-white">{t.experience.title[0]}</span>
             <br />
-            <span className="text-white">que dan </span>
+            <span className="text-white">{t.experience.title[1]}</span>
             <span
               className="italic"
               style={{
@@ -49,7 +51,7 @@ export function ExperienceSection() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              vida a las ideas
+              {t.experience.title[2]}
             </span>
           </h2>
         </div>
@@ -92,7 +94,7 @@ export function ExperienceSection() {
 
           {/* ── Unified Card Container ── */}
           <div className="bg-neutral-950  overflow-hidden">
-            {EXPERIENCE_DATA.map((experience, index) => (
+            {EXPERIENCE_DATA[lang].map((experience, index) => (
               <div key={index}>
                 {/* Divider between cards */}
                 {index > 0 && (

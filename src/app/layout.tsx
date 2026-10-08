@@ -23,21 +23,22 @@ const instrumentSerif = Instrument_Serif({
 });
 export const metadata: Metadata = {
   title: {
-    default: 'Sebastian Betancourt | Software Developer',
+    default: 'Sebastian Betancourt | Backend Engineer',
     template: '%s | Sebastian Betancourt',
   },
   description:
-    'Portafolio profesional de Sebastian Betancourt, desarrollador Full Stack especializado en Next.js, React y Node.js.',
+    'Portfolio of Sebastian Betancourt, backend engineer working with Go, TypeScript, PostgreSQL and integrations (OAuth, webhooks, AI agents).',
   keywords: [
     'Sebastian Betancourt',
-    'Full Stack Developer',
-    'Next.js',
-    'React',
-    'Typescript',
-    'Nodejs',
-    'PosgreSQL',
-    'Desarrollador Software',
-    'Portafolio',
+    'Backend Engineer',
+    'Go',
+    'TypeScript',
+    'Node.js',
+    'PostgreSQL',
+    'Redis',
+    'Integrations',
+    'Software Developer',
+    'Portfolio',
   ],
   authors: [{ name: 'Sebastian Betancourt' }],
   creator: 'Sebastian Betancourt',
@@ -45,9 +46,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL ?? 'http://localhost:3000'),
 
   openGraph: {
-    title: 'Sebastian Betancourt | Software Developer',
+    title: 'Sebastian Betancourt | Backend Engineer',
     description:
-      'Portafolio profesional con proyectos reales en Next.js, React y SaaS.',
+      'Backend engineer — Go, TypeScript, PostgreSQL & integrations.',
     url: process.env.SITE_URL ?? 'http://localhost:3000',
     siteName: 'Sebastian Betancourt',
     images: [
@@ -55,18 +56,19 @@ export const metadata: Metadata = {
         url: '/img/icon.png',
         width: 1200,
         height: 630,
-        alt: 'Portafolio Sebastian Betancourt',
+        alt: 'Sebastian Betancourt portfolio',
       },
     ],
-    locale: 'es_CO',
+    locale: 'en_US',
+    alternateLocale: ['es_CO'],
     type: 'website',
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Sebastian Betancourt | Full Stack Developer',
+    title: 'Sebastian Betancourt | Backend Engineer',
     description:
-      'Portafolio profesional con proyectos reales en Next.js y React.',
+      'Backend engineer — Go, TypeScript, PostgreSQL & integrations.',
     images: ['/img/icon.png'],
   },
 
@@ -78,6 +80,7 @@ export const metadata: Metadata = {
 }
 
 import ContactCTA from "@/components/organisms/ContactCTA";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
 
 export default function RootLayout({
   children,
@@ -85,16 +88,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="dark">
+    <html lang="en" className="dark">
       <body
         className={`${outfit.variable} ${instrumentSerif.variable} overflow-x-hidden`}
       >
+        <LanguageProvider>
           <Navbar />
 
           {children}
 
           <ContactCTA />
           <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

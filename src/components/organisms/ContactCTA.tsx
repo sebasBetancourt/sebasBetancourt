@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
+import { CONTACT } from "@/lib/contact";
+import { useLang } from "@/i18n/LanguageProvider";
 
 export default function ContactCTA() {
+  const { t } = useLang();
   return (
     <section className="relative w-full overflow-hidden bg-[#050505] py-24 md:py-32 border-t border-white/5">
       {/* Background Glows & Noise Effect */}
@@ -58,8 +61,8 @@ export default function ContactCTA() {
         {/* Headline */}
         <div className="relative inline-block mb-10 w-full max-w-4xl mx-auto">
           <h2 className="text-[2.5rem] leading-[1.1] md:text-6xl lg:text-7xl font-light tracking-tight text-white/90 uppercase">
-            Del concepto a la <span className="font-bold text-white drop-shadow-md">realidad</span><br className="max-md:hidden" />
-            {" "}hagamos que <span className="font-bold text-white drop-shadow-md">suceda!</span>
+            {t.cta.title[0]}<span className="font-bold text-white drop-shadow-md">{t.cta.title[1]}</span><br className="max-md:hidden" />
+            {" "}{t.cta.title[2]}<span className="font-bold text-white drop-shadow-md">{t.cta.title[3]}</span>
           </h2>
 
           {/* Rotating Badge */}
@@ -69,7 +72,7 @@ export default function ContactCTA() {
                 <path id="badgePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
                 <text className="text-[10px] font-bold tracking-[0.25em] text-white/70" fill="currentColor">
                   <textPath href="#badgePath" startOffset="0%">
-                    DISPONIBLE 💼 • DISPONIBLE 💼 • 
+                    {`${t.cta.available} 💼 • ${t.cta.available} 💼 • `}
                   </textPath>
                 </text>
               </svg>
@@ -83,10 +86,10 @@ export default function ContactCTA() {
 
         {/* Button */}
         <a 
-          href="mailto:[EMAIL_ADDRESS]" 
+          href={`mailto:${CONTACT.email}`} 
           className="group relative flex items-center gap-4 px-6 py-2.5 mb-14 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 rounded-full transition-all duration-300"
         >
-          <span className="text-white/90 font-medium text-sm md:text-base ml-2">Hablemos</span>
+          <span className="text-white/90 font-medium text-sm md:text-base ml-2">{t.cta.button}</span>
           <div className="flex items-center justify-center w-8 h-8 bg-[#E5E5E5] text-black rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:bg-white">
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-45" />
           </div>
@@ -94,10 +97,10 @@ export default function ContactCTA() {
 
         {/* Subtexts */}
         <h3 className="text-xl md:text-[28px] font-instrument italic text-white/90 mb-4 max-w-2xl text-center">
-          Estoy disponible para puestos de tiempo completo y proyectos freelance.
+          {t.cta.subtitle}
         </h3>
         <p className="text-neutral-400 text-sm md:text-[15px] max-w-xl text-center leading-relaxed font-light">
-          Me encanta crear aplicaciones web dinámicas y ofrecer experiencias de usuario fluidas.
+          {t.cta.body}
         </p>
       </div>
     </section>

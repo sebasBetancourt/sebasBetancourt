@@ -1,10 +1,10 @@
 import { IconType } from "react-icons";
-import { 
-  SiVuedotjs, SiNuxtdotjs, SiDjango, SiTailwindcss, SiTypescript, 
-  SiReact, SiVite, SiNodedotjs, SiExpress, SiJsonwebtokens, SiMongodb, 
-  SiJavascript, SiDotenv, SiHtml5, SiCss3 
+import {
+  SiTailwindcss, SiReact, SiVite, SiNodedotjs, SiExpress, SiJsonwebtokens, SiMongodb,
+  SiJavascript
 } from "react-icons/si";
-import { FaDatabase, FaProjectDiagram, FaNetworkWired } from "react-icons/fa";
+import { FaProjectDiagram } from "react-icons/fa";
+import type { Lang } from "@/i18n/dictionaries";
 
 export type Project = {
   title: string;
@@ -24,7 +24,7 @@ export type Project = {
   };
 };
 
-export const PROJECTS_DATA: Project[] = [
+const PROJECTS_ES: Project[] = [
   {
     title: "PelixFlix",
     description: "Aplicación web full-stack diseñada para amantes del cine y series. La plataforma permite descubrir, calificar y reseñar contenido.",
@@ -45,39 +45,11 @@ export const PROJECTS_DATA: Project[] = [
     visual: {
       title: "Plataforma de Streaming y social para amantes del cine",
       bgColor: "bg-[#540a0ac4]",
-      image: "https://media.licdn.com/dms/image/v2/D4E2DAQEGinEfdJwbYA/profile-treasury-image-shrink_800_800/B4EZrNXAx3J0AY-/0/1764381954423?e=1774850400&v=beta&t=JifXssyb9UJkeNDfHONn4ClyFm8p2q-z47BS4SQDWHc",
-      imageHover: "https://media.licdn.com/dms/image/v2/D4E2DAQHvmTHEbaCLrw/profile-treasury-image-shrink_800_800/B4EZrNW8TBHoAY-/0/1764381936117?e=1774850400&v=beta&t=8W7-RzpUAluCZ42aIV9Na5LVoF7RHSIA34FAurNJjZM",
+      image: "/img/pixelflix.png",
     },
     links: {
       frontend: "https://github.com/sebasBetancourt/streaming",
       backend: "https://github.com/sebasBetancourt/Pelixflix--backend"
-    }
-  },
-  {
-    title: "Edusync",
-    description: "Plataforma moderna y responsiva para la gestión académica de una institución educativa.",
-    features: [
-      "Gestión académica integral y eficiente.",
-      "Diseño moderno, intuitivo y completamente responsivo.",
-      "Proyecto colaborativo implementando el stack MERN.",
-      "Proyecto de Gestión Académica con autenticación, autorización y gestión de usuarios."
-    ],
-    techStack: [
-      { name: "Vue", icon: SiVuedotjs, color: "#4FC08D" },
-      { name: "Nuxt", icon: SiNuxtdotjs, color: "#00DC82" },
-      { name: "Django", icon: SiDjango, color: "#092E20" },
-      { name: "SQL", icon: FaDatabase, color: "#336791" },
-      { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" }
-    ],
-    visual: {
-      title: "Plataforma de Gestión Académica para instituciones educativas",
-      bgColor: "bg-blue-600",
-      image: "/img/edusync/1.png",
-      imageHover: "/img/edusync/2.png",
-    },
-    links: {
-      repo: "https://github.com/sebasBetancourt/Edusync"
     }
   },
   {
@@ -97,59 +69,43 @@ export const PROJECTS_DATA: Project[] = [
     visual: {
       title: "Gestión Profesional para Freelancers por Consola",
       bgColor: "bg-emerald-600",
-      image: "/img/OrbisPro/2.png",
-      imageHover: "/img/OrbisPro/1.png",
+      image: "/img/OrbisPro/2.PNG",
+      imageHover: "/img/OrbisPro/1.PNG",
     },
     links: {
       repo: "https://github.com/sebasBetancourt/Orbis-ProCLI"
     }
   },
+];
+
+type LocalizedFields = Pick<Project, "description" | "features"> & { visualTitle: string };
+
+// Mismo orden que PROJECTS_ES
+const PROJECTS_EN_TEXT: LocalizedFields[] = [
   {
-    title: "BitTribe",
-    description: "Plataforma web interactiva para explorar, analizar y convertir criptomonedas en tiempo real con autenticación y librería personal.",
+    description: "Full-stack web application for movie and TV fans. The platform lets users discover, rate and review content.",
     features: [
-      "Explorador y buscador de criptomonedas en tiempo real con conversión a divisa (COP).",
-      "Autenticación completa y gestión de librería personal con persistencia local.",
-      "Diseño interactivo 'mobile-first' completamente responsivo."
+      "User interaction through reviews, likes and dislikes.",
+      "Team project built on the MERN stack.",
+      "Streaming project with authentication, authorization and user management."
     ],
-    techStack: [
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: SiCss3, color: "#1572B6" },
-      { name: "APIs", icon: FaNetworkWired, color: "#FFFFFF" }
-    ],
-    visual: {
-      title: "Explorador Cripto en Tiempo Real",
-      bgColor: "bg-indigo-600",
-      image: "/img/bitcoin/1.png",
-      imageHover: "/img/bitcoin/2.png",
-    },
-    links: {
-      repo: "https://github.com/sebasBetancourt/criptoCoins"
-    }
+    visualTitle: "Streaming and social platform for movie lovers",
   },
   {
-    title: "GameCampus",
-    description: "Plataforma web interactiva estilo Dungeons & Dragons para crear y gestionar personajes personalizables.",
+    description: "Node.js command-line application (CLI) that lets freelancers manage their portfolio — clients, projects and finances — through safe transactions.",
     features: [
-      "Integración de múltiples APIs para enriquecer la experiencia.",
-      "Enfoque en gamificación y trabajo colaborativo bajo SCRUM."
+      "Advanced CRUD operations using native MongoDB transactions and sessions (ACID).",
+      "Scalable architecture applying S.O.L.I.D. principles and design patterns such as Factory and Command.",
+      "Team development under SCRUM, structured with Conventional Commits."
     ],
-    techStack: [
-      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      { name: "APIs", icon: FaNetworkWired, color: "#FFFFFF" },
-      { name: "SCRUM", icon: FaProjectDiagram, color: "#FFFFFF" },
-      { name: "HTML", icon: SiHtml5, color: "#E34F26" },
-      { name: "CSS", icon: SiCss3, color: "#1572B6" }
-    ],
-    visual: {
-      title: "Aventura y creación de personajes basada en Dungeons & Dragons",
-      bgColor: "bg-[#1a1a1a]",
-      image: "/img/gameCampus/1.png",
-      imageHover: "/img/gameCampus/2.png",
-    },
-    links: {
-      repo: "https://github.com/julianort11/GameCampus"
-    }
-  }
+    visualTitle: "Professional management for freelancers from the terminal",
+  },
 ];
+
+export const PROJECTS_DATA: Record<Lang, Project[]> = {
+  es: PROJECTS_ES,
+  en: PROJECTS_ES.map((project, i) => {
+    const { visualTitle, ...text } = PROJECTS_EN_TEXT[i];
+    return { ...project, ...text, visual: { ...project.visual, title: visualTitle } };
+  }),
+};

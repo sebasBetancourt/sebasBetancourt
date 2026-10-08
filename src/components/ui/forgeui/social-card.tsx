@@ -13,6 +13,7 @@ interface SocialCardProps {
   title: string;
   name: string;
   pitch: string;
+  connectLabel?: string;
   icon?: React.ReactNode;
   buttons?: Array<{
     label: string;
@@ -27,6 +28,7 @@ const SocialCard = ({
   title,
   name,
   pitch,
+  connectLabel = "Connect with me",
   icon,
   buttons,
 }: SocialCardProps) => {
@@ -120,7 +122,7 @@ const SocialCard = ({
       >
         <div className="text-neutral-900 dark:text-neutral-100">
           <div className="mb-2 flex items-center justify-between text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-            <span>Connect with me</span>
+            <span>{connectLabel}</span>
             <span>
               <LuArrowUpRight />
             </span>
