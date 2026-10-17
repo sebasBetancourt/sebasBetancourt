@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full">
       
-      <section className="py-40">
+      <section className="py-24 md:py-40">
         <HomeComponents />
       </section>
 

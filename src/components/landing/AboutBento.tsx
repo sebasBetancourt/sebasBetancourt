@@ -65,10 +65,10 @@ export default function AboutBento() {
   const { t } = useLang();
   return (
     <section className="w-full min-h-screen flex items-center justify-center px-4 md:px-25 py-14">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-3 auto-rows-[320px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-3 auto-rows-auto md:auto-rows-[320px]">
 
         {/* Collaboration */}
-        <BentoCard className="md:col-span-2 flex justify-between ">
+        <BentoCard className="md:col-span-2 flex flex-col md:flex-row justify-between ">
           <div className="space-y-5">
             <p className="text-xs uppercase tracking-widest text-neutral-400 font-mono">
               {t.bento.collabLabel}
@@ -165,7 +165,7 @@ export default function AboutBento() {
         {/* Timezone */}
         <BentoCard className="md:row-span-2">
           <div className="flex gap-4 justify-center items-center">
-            <h2 className="text-3xl dark:text-neutral-300  text-black font-instrument">
+            <h2 className="text-2xl md:text-3xl dark:text-neutral-300  text-black font-instrument">
             {t.bento.remoteTitle}
           </h2>
           <Globe className="h-15 w-15"/>
@@ -183,7 +183,7 @@ export default function AboutBento() {
         {/* CTA */}
         <BentoCard className="md:col-span-2 flex-1 space-y-6">
           <div className="flex flex-col gap-2">
-            <h3 className="text-4xl  dark:text-neutral-100  text-black font-instrument">
+            <h3 className="text-3xl md:text-4xl  dark:text-neutral-100  text-black font-instrument">
               {t.bento.ctaTitle}
             </h3>
 

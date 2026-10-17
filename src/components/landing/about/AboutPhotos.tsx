@@ -4,18 +4,22 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ABOUT_DATA } from "./data";
 import { useLang } from "@/i18n/LanguageProvider";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 
 export function AboutPhotos() {
   const { lang } = useLang();
   const photos = ABOUT_DATA(lang).photos;
+  // En pantallas pequeñas las fotos de los lados se separan menos para no salirse
+  const isSmall = useMediaQuery("(max-width: 639px)");
+  const offset = isSmall ? 60 : 140;
   const [activeIndex, setActiveIndex] = useState(() => {
     const meIndex = photos.findIndex(p => p.isMe);
     return meIndex !== -1 ? meIndex : photos.length - 1;
   });
 
   return (
-    <div className="relative w-[100%] aspect-square md:aspect-auto md:h-[500px] flex flex-col items-center justify-center py-10">
-      <div className="relative w-[300px] h-[400px]">
+    <div className="relative w-[100%] h-[420px] sm:h-auto sm:aspect-square md:aspect-auto md:h-[500px] flex flex-col items-center justify-center py-10 overflow-x-clip">
+      <div className="relative w-[230px] h-[310px] sm:w-[300px] sm:h-[400px]">
         {photos.map((photo, idx) => (
           <motion.div
             key={idx}
@@ -25,7 +29,7 @@ export function AboutPhotos() {
             animate={{
               rotate: idx === activeIndex ? 0 : (idx - activeIndex) * 8,
               scale: idx === activeIndex ? 1 : 0.85,
-              x: (idx - activeIndex) * 140, // More separation
+              x: (idx - activeIndex) * offset, // More separation
               y: idx === activeIndex ? 0 : Math.abs(idx - activeIndex) * 15, // Slight downward curve
               opacity: idx === activeIndex ? 1 : 0.5,
             }}

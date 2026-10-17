@@ -60,13 +60,13 @@ export default function ContactCTA() {
 
         {/* Headline */}
         <div className="relative inline-block mb-10 w-full max-w-4xl mx-auto">
-          <h2 className="text-[2.5rem] leading-[1.1] md:text-6xl lg:text-7xl font-light tracking-tight text-white/90 uppercase">
+          <h2 className="text-[2rem] sm:text-[2.5rem] leading-[1.1] md:text-6xl lg:text-7xl font-light tracking-tight text-white/90 uppercase">
             {t.cta.title[0]}<span className="font-bold text-white drop-shadow-md">{t.cta.title[1]}</span><br className="max-md:hidden" />
             {" "}{t.cta.title[2]}<span className="font-bold text-white drop-shadow-md">{t.cta.title[3]}</span>
           </h2>
 
           {/* Rotating Badge */}
-          <div className="absolute -right-2 -bottom-20 md:-right-8 md:-bottom-10 w-28 h-28 md:w-32 md:h-32 bg-[#050505] rounded-full border border-blue-600/30 flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.15)] z-20">
+          <div className="relative mx-auto mt-8 md:mt-0 md:absolute md:-right-8 md:-bottom-10 w-28 h-28 md:w-32 md:h-32 bg-[#050505] rounded-full border border-blue-600/30 flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.15)] z-20">
             <div className="absolute inset-0 animate-[spin_8s_linear_infinite]">
               <svg viewBox="0 0 100 100" className="w-full h-full" style={{ overflow: 'visible' }}>
                 <path id="badgePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />

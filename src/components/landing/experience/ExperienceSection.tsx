@@ -29,9 +29,9 @@ export function ExperienceSection() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-[93%] bg-[#0a0a0a] border-t border-x border-white/[0.07] ">
+    <div className="flex flex-col items-center justify-center w-full md:w-[93%] bg-[#0a0a0a] border-t border-x border-white/[0.07] ">
       {/* ── Header ── */}
-      <section className="pt-32 pb-8 px-6 md:px-12 w-full max-w-6xl mx-auto flex flex-col items-center">
+      <section className="pt-24 md:pt-32 pb-8 px-6 md:px-12 w-full max-w-6xl mx-auto flex flex-col items-center">
         <div className="flex items-center gap-1.5 mb-6">
           <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
           <div className="w-1.5 h-1.5 rounded-full bg-white/40" />

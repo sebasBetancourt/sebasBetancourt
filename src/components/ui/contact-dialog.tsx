@@ -40,7 +40,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100%", opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 left-0 right-0 z-[6001] mx-auto max-w-2xl w-full bg-[#0d0d0d] border-t border-x border-white/10 rounded-t-[32px] p-8 shadow-[0_-8px_40px_rgba(0,0,0,0.5)] flex flex-col items-center"
+            className="fixed bottom-0 left-0 right-0 z-[6001] mx-auto max-w-2xl w-full bg-[#0d0d0d] border-t border-x border-white/10 rounded-t-[32px] p-6 md:p-8 shadow-[0_-8px_40px_rgba(0,0,0,0.5)] flex flex-col items-center"
           >
             {/* Grabber */}
             <div className="w-12 h-1.5 bg-white/10 rounded-full mb-8" />
@@ -48,7 +48,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
             {/* Header */}
             <div className="w-full flex justify-between items-start mb-10">
               <div className="flex flex-col gap-2">
-                <h2 className="text-4xl font-instrument text-white">{t.contact.title}</h2>
+                <h2 className="text-3xl md:text-4xl font-instrument text-white">{t.contact.title}</h2>
                 <p className="text-[10px] font-mono text-neutral-500 tracking-[0.2em] uppercase">
                   {t.contact.subtitle}
                 </p>
