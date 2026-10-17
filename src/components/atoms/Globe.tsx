@@ -1,4 +1,7 @@
+"use client";
+
 import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 
 const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
   ssr: false,
@@ -391,7 +394,30 @@ const globeConfig = {
   ];
 
 export default function Mundo(){
+    const ref = useRef<HTMLDivElement>(null);
+    const [visible, setVisible] = useState(false);
+
+    // Monta el globo (Three.js) solo cuando su tarjeta está cerca de la pantalla.
+    // En móvil el contenedor está oculto (hidden md:block), así que nunca se carga
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: "200px" }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
     return(
-        <World data={sampleArcs} globeConfig={globeConfig} />
+        <div ref={ref} className="hidden md:block" style={{ width: "100%", height: "100%" }}>
+            {visible && <World data={sampleArcs} globeConfig={globeConfig} />}
+        </div>
     );
 }

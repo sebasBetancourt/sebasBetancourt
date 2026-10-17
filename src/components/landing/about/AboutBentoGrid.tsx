@@ -16,7 +16,7 @@ import {
 export function AboutBentoGrid() {
   const { t } = useLang();
   return (
-    <section className="py-20 bg-[#0a0a0a] border-t border-x border-white/[0.07] w-[94.2%]">
+    <section className="py-20 bg-[#0a0a0a] border-t border-x border-white/[0.07] w-full md:w-[94.2%]">
       {/* Header Section */}
       <div className="flex flex-col items-center text-center mb-16">
         <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-neutral-500 uppercase mb-4">
@@ -59,7 +59,7 @@ export function AboutBentoGrid() {
              </motion.div>
              <motion.div 
                whileHover={{ y: -10, rotate: 5 }}
-               className="w-24 h-32 rounded-xl absolute right-25 backdrop-blur-sm flex items-center justify-center"
+               className="w-24 h-32 rounded-xl absolute right-16 sm:right-25 backdrop-blur-sm flex items-center justify-center"
              >
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR_VpYHCi-3ngO5H9fG9x03gg5xiDAG2YsOg&s" className="w-full h-full object-cover rounded-xl" alt="" />
              </motion.div>

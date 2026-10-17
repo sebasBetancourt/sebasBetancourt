@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { useLang } from "@/i18n/LanguageProvider";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 import { Project } from "./data";
 
 export function EyeIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -41,8 +42,19 @@ export function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
 export function ProjectVisual({ project, index }: { project: Project; index: number }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [flipped, setFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const { t } = useLang();
+  // En pantallas táctiles no hay hover: el cursor personalizado se oculta y el giro se hace con un toque
+  const canHover = useMediaQuery("(hover: hover)", true);
+
+  const handleClick = () => {
+    if (!canHover && project.visual.imageHover) {
+      setFlipped((value) => !value);
+      return;
+    }
+    if (project.links?.demo) window.open(project.links.demo, "_blank", "noopener,noreferrer");
+  };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!cardRef.current) return;
@@ -61,11 +73,12 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onClick={() => project.links?.demo && window.open(project.links.demo, "_blank", "noopener,noreferrer")}
+        onClick={handleClick}
         data-index={index}
-        className="project-visual-card group relative w-full aspect-square lg:aspect-auto lg:h-[370px] p-3 md:p-2 bg-neutral-900 border border-white/10 rounded-[2.5rem] shadow-xl transition-transform duration-500 hover:scale-[1.03] cursor-none overflow-hidden"
+        className="project-visual-card group relative w-full aspect-square lg:aspect-auto lg:h-[370px] p-3 md:p-2 bg-neutral-900 border border-white/10 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl transition-transform duration-500 hover:scale-[1.03] [@media(hover:hover)]:cursor-none overflow-hidden"
       >
         {/* Custom Cursor */}
+        {canHover && (
         <div 
           className={`pointer-events-none absolute z-50 flex items-center justify-center w-28 h-28 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white transition-opacity duration-300 ease-out ${isHovered ? 'opacity-100' : 'opacity-0'}`}
           style={{
@@ -88,12 +101,13 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
             </svg>
           </div>
         </div>
+        )}
 
-        <div className={`relative w-full h-full rounded-[2rem] overflow-hidden pt-6 px-6 pb-0 md:pt-8 md:px-8 md:pb-0 flex flex-col shadow-inner ${project.visual.bgColor}`}>
+        <div className={`relative w-full h-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden pt-6 px-6 pb-0 md:pt-8 md:px-8 md:pb-0 flex flex-col shadow-inner ${project.visual.bgColor}`}>
           
           {/* Header Text */}
           <div className="flex justify-between items-start gap-4 z-10 transition-transform duration-700 ease-out group-hover:-translate-y-2">
-            <p className="text-white md:text-[25px] font-instrument leading-snug max-w-[85%]">
+            <p className="text-white text-2xl md:text-[25px] font-instrument leading-snug max-w-[85%]">
               {project.visual.title}
             </p>
             <ArrowRightIcon className="text-white/70 w-5 h-5 shrink-0 transition-transform duration-500 group-hover:translate-x-1 group-hover:-rotate-45" />
@@ -104,7 +118,7 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
             <div 
               className={`relative w-full h-full [transform-style:preserve-3d] transition-transform duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                 project.visual.imageHover ? "group-hover:[transform:rotateY(180deg)]" : ""
-              }`}
+              } ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
             >
               {/* Front Image */}
               <img 
@@ -223,7 +237,7 @@ function ProjectTextInner({ project }: { project: Project }) {
         {project.links && (
           <div className="flex flex-wrap items-center gap-4 mt-5 pt-5 border-t border-white/5">
             {project.links.demo && (
-              <a href={project.links.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-neutral-200 transition-colors">
+              <a href={project.links.demo} target="_blank" rel="noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-neutral-200 transition-colors">
                 <EyeIcon className="w-4 h-4" />
                 <span>{t.projects.demo}</span>
               </a>

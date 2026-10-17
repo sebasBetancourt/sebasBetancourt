@@ -17,7 +17,7 @@ export const FloatingNav = ({
   navItems,
   className,
 }: {
-  navItems: { name: string; link: string }[];
+  navItems: { name: string; link: string; icon?: React.ComponentType<{ className?: string }> }[];
   className?: string;
 }) => {
   const { scrollY } = useScroll();
@@ -47,18 +47,21 @@ export const FloatingNav = ({
           {navItems.map((item, idx) => {
             const isActive = pathname === item.link;
             const isLast = idx === navItems.length - 1;
+            const Icon = item.icon;
 
             if (isLast) {
               return (
                 <button
                   key={idx}
                   onClick={() => setIsContactOpen(true)}
+                  aria-label={item.name}
                   className={cn(
-                    "relative ml-2 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer",
+                    "relative ml-1 px-3 py-2.5 md:ml-2 md:px-6 md:py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer",
                     "bg-white/[0.08] hover:bg-white/[0.15] border border-white/10 hover:border-white/20 text-white shadow-[0_0_20px_rgba(255,255,255,0.05)]"
                   )}
                 >
-                  {item.name}
+                  {Icon && <Icon className="h-4 w-4 md:hidden" />}
+                  <span className={Icon ? "hidden md:inline" : undefined}>{item.name}</span>
                 </button>
               );
             }
@@ -67,8 +70,9 @@ export const FloatingNav = ({
               <Link
                 key={idx}
                 href={item.link}
+                aria-label={item.name}
                 className={cn(
-                  "relative px-5 py-2 rounded-full text-sm transition-all duration-300 group",
+                  "relative px-3 py-2.5 md:px-5 md:py-2 rounded-full text-sm transition-all duration-300 group",
                   isActive ? "text-white" : "text-neutral-400 hover:text-white"
                 )}
               >
@@ -93,7 +97,8 @@ export const FloatingNav = ({
                   />
                 )}
 
-                <span className="relative z-10">{item.name}</span>
+                {Icon && <Icon className="relative z-10 block h-4 w-4 md:hidden" />}
+                <span className={cn("relative z-10", Icon && "hidden md:inline")}>{item.name}</span>
               </Link>
             );
           })}

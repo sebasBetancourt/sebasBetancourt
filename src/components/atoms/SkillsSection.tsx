@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import type { IconType } from "react-icons";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 
 interface SkillsSectionProps {
   icons: IconType[];
@@ -11,10 +12,10 @@ interface SkillsSectionProps {
   className: string;
 }
 
-function SkillIcon({ Icon, index, centerIndex, scrollYProgress }: { Icon: IconType, index: number, centerIndex: number, scrollYProgress: any }) {
+function SkillIcon({ Icon, index, centerIndex, scrollYProgress, spread }: { Icon: IconType, index: number, centerIndex: number, scrollYProgress: any, spread: number }) {
   const distanceFromCenter = index - centerIndex;
 
-  const x = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 100, 0]);
+  const x = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * spread, 0]);
   const y = useTransform(scrollYProgress, [0, 1], [Math.abs(distanceFromCenter) * 20, 0]);
   const rotate = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 12, 0]);
 
@@ -40,11 +41,14 @@ export default function SkillsSection({ icons, text1, text2, className }: Skills
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
 
   const centerIndex = (icons.length - 1) / 2;
+  // En pantallas pequeñas los íconos se separan menos para no salirse de la pantalla
+  const isSmall = useMediaQuery("(max-width: 639px)");
+  const spread = isSmall ? 30 : 100;
 
   return (
     <section
       ref={ref}
-      className="relative flex flex-col items-center justify-around gap-4 px-6 py-4"
+      className="relative flex flex-col items-center justify-around gap-4 px-6 py-4 overflow-x-clip"
     >
       {/* Title */}
       <motion.div
@@ -69,6 +73,7 @@ export default function SkillsSection({ icons, text1, text2, className }: Skills
             index={i}
             centerIndex={centerIndex}
             scrollYProgress={scrollYProgress}
+            spread={spread}
           />
         ))}
       </motion.div>

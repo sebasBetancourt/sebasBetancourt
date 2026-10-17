@@ -47,7 +47,7 @@ export default function HomeComponents(){
           </NoiseBackground>
         </div>
         <TextGenerateEffectProps key={t.hero.title} className="text-4xl md:text-6xl font-extrabold text-center" words={t.hero.title}></TextGenerateEffectProps>
-        <div className="flex gap-5 items-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-center text-center sm:text-left">
           <TypingText key={t.hero.typing} className="font-mono text-sm md:text-lg" pauseDuration={3000} loop={true} text={t.hero.typing}></TypingText>
           <Avatar>
             <AvatarImage src="/img/icon.png" />
