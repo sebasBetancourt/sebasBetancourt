@@ -104,6 +104,9 @@ const PROJECTS_ES: Project[] = [
       bgColor: "bg-[#1e3a8a]",
       image: "/img/relay/architecture.svg",
     },
+    links: {
+      repo: "https://github.com/sebasBetancourt/Relay",
+    },
   },
   {
     title: "Ledger",
