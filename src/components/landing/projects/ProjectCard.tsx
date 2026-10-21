@@ -53,7 +53,9 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
       setFlipped((value) => !value);
       return;
     }
-    if (project.links?.demo) window.open(project.links.demo, "_blank", "noopener,noreferrer");
+    // Abre la demo; si no hay demo, el repo (proyectos publicados sin demo, como Relay)
+    const target = project.links?.demo ?? (project.status === "in-progress" ? undefined : project.links?.repo);
+    if (target) window.open(target, "_blank", "noopener,noreferrer");
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -95,7 +97,9 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
                 <textPath href="#circlePath" startOffset="0%">
                   {project.links?.demo
                     ? `${t.projects.details} • ${t.projects.details} •`
-                    : `${t.projects.building} • ${t.projects.building} •`}
+                    : project.status === "in-progress"
+                      ? `${t.projects.building} • ${t.projects.building} •`
+                      : `${t.projects.viewRepo} • ${t.projects.viewRepo} •`}
                 </textPath>
               </text>
             </svg>
