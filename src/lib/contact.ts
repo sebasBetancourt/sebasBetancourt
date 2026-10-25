@@ -4,7 +4,11 @@ export const CONTACT = {
   linkedin: "https://www.linkedin.com/in/sebastian-betancourt-605654293",
   github: "https://github.com/sebasBetancourt",
   instagram: "https://www.instagram.com/sebasbetan_soft/",
-  cv: "/cv.pdf",
+  // Generadas con `python3 cv/build.py`
+  cv: {
+    en: "/cv/CV-Sebastian-Betancourt-EN.pdf",
+    es: "/cv/CV-Sebastian-Betancourt-ES.pdf",
+  },
 };
 
 export const whatsappUrl = (message: string) =>

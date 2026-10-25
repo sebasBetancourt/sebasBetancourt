@@ -111,6 +111,11 @@ const en = {
     cardTitle: "Contact me",
     cardPitch: "Explore my projects and connect with me.",
     cardConnect: "Connect with me",
+    cvDialogTitle: "Download my CV",
+    cvDialogSubtitle: "Which language would you like it in?",
+    cvEnglish: "English",
+    cvSpanish: "Spanish",
+    cvClose: "Close",
   },
   cta: {
     title: ["From concept to ", "reality", "let's make it ", "happen!"],
@@ -243,6 +248,11 @@ const es: Dictionary = {
     cardTitle: "Contáctame",
     cardPitch: "Explora mis proyectos y conecta conmigo.",
     cardConnect: "Conecta conmigo",
+    cvDialogTitle: "Descarga mi hoja de vida",
+    cvDialogSubtitle: "¿En qué idioma la quieres?",
+    cvEnglish: "Inglés",
+    cvSpanish: "Español",
+    cvClose: "Cerrar",
   },
   cta: {
     title: ["Del concepto a la ", "realidad", "hagamos que ", "suceda!"],

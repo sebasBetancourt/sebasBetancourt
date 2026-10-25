@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope, FaFileDownload, FaArrowLeft, FaChevronRight, FaCopy } from "react-icons/fa";
 import { CONTACT, whatsappUrl as buildWhatsappUrl } from "@/lib/contact";
 import { useLang } from "@/i18n/LanguageProvider";
+import { CvDownload } from "./cv-download";
 
 interface ContactDialogProps {
   isOpen: boolean;
@@ -78,19 +79,14 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
               </a>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {/* CV */}
-                <a 
-                  href={CONTACT.cv}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex flex-col justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 transition-all text-left h-32"
-                >
+                {/* CV: pregunta el idioma (EN / ES) antes de descargar */}
+                <CvDownload className="group flex flex-col justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 transition-all text-left h-32">
                   <FaFileDownload className="w-5 h-5 text-neutral-500 group-hover:text-white transition-colors" />
-                  <div className="flex flex-col">
+                  <span className="flex flex-col">
                     <span className="text-white font-medium text-sm">{t.contact.cv}</span>
                     <span className="text-[10px] text-neutral-500 uppercase tracking-wider mt-1">{t.contact.cvSub}</span>
-                  </div>
-                </a>
+                  </span>
+                </CvDownload>
 
                 {/* Email */}
                 <div className="group flex flex-col justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] hover:border-white/10 transition-all text-left h-32 relative">

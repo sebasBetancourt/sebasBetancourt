@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaWhatsappSquare } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { CONTACT, whatsappUrl } from "@/lib/contact";
 import { useLang } from "@/i18n/LanguageProvider";
+import { CvDownload } from "@/components/ui/cv-download";
 
 export default function Footer() {
   const [year, setYear] = React.useState<number | string>("");
@@ -61,7 +62,7 @@ export default function Footer() {
               <li><a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a></li>
               <li><a href={whatsapp} target="_blank" rel="noreferrer" className="hover:text-white">WhatsApp</a></li>
               <li><a href={`mailto:${CONTACT.email}`} className="hover:text-white">Gmail</a></li>
-              <li><a href={CONTACT.cv} target="_blank" rel="noreferrer" className="hover:text-white">{t.footer.cv}</a></li>
+              <li><CvDownload className="hover:text-white">{t.footer.cv}</CvDownload></li>
             </ul>
           </div>
 
