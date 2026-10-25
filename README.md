@@ -1,124 +1,78 @@
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" alt="Banner Animation"/>
-
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=562AA1&height=200&section=header&text=Sebastian%20Betancourt&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38" alt="Banner" width="100%"/>
+
+[![Profile views](https://komarev.com/ghpvc/?username=sebasBetancourt&label=Profile%20views&color=a855f7&style=for-the-badge)](https://github.com/sebasBetancourt)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF2D8D?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-delta-fawn.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sebastian-betancourt-605654293)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:s3basbetan@gmail.com)
+
 </div>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Courier+New&weight=700&size=24&pause=1000&color=562AA1&center=true&width=900&height=100&lines=Hi+There!%2C+I'm+Sebastian+Betancourt+FullStack+Developer;" alt="Typing SVG" />
+# Hi, I'm Sebastian 👋
+
+<h3>Software developer specialized in integrations: the APIs and data flows that connect products to the services they depend on.</h3>
+
+- 🔌 I work with **OAuth 2.0**, **webhooks**, **real-time sync**, **idempotent processing** and **REST API** design.
+- 🌱 Studying **AI Engineering**, **system design** and **distributed systems**.
+- 🤝 Open to **full-time remote roles** → [get in touch](mailto:s3basbetan@gmail.com)
+
+<br/>
+
+## ⭐ Featured projects
+
+### [Relay](https://github.com/sebasBetancourt/Relay) · One API for Google Calendar and Outlook
+
+[![CI](https://github.com/sebasBetancourt/Relay/actions/workflows/ci.yml/badge.svg)](https://github.com/sebasBetancourt/Relay/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/sebasBetancourt/Relay)](https://github.com/sebasBetancourt/Relay/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/sebasBetancourt/Relay/blob/main/LICENSE)
+
+Your users connect their Google or Microsoft account once; Relay handles OAuth, keeps their tokens encrypted and fresh, and returns their events in a single shape, whatever the provider.
+
+- **OAuth 2.0 + PKCE** for Google and Microsoft Entra, with single-use state and scope checks.
+- **Token vault** with AES-256-GCM and AAD: every token is bound to its tenant, account and column.
+- **Refresh-token rotation that is safe across replicas** (Postgres row lock), Windows → IANA time zones and SSRF-safe pagination.
+- **170 tests**, including an end-to-end suite against stateful fake Google and Microsoft servers.
+- Shipped with GoReleaser, a container image on GHCR, govulncheck, Dependabot and an OpenAPI 3.1 spec.
+
+### [PelixFlix](https://streaming-psi-olive.vercel.app) · Streaming platform for movies, series and anime
+
+[![Live demo](https://img.shields.io/badge/Live%20demo-FF2D8D?style=flat&logo=vercel&logoColor=white)](https://streaming-psi-olive.vercel.app)
+[![Backend](https://img.shields.io/badge/repo-backend-181717?style=flat&logo=github)](https://github.com/sebasBetancourt/Pelixflix--backend)
+[![Frontend](https://img.shields.io/badge/repo-frontend-181717?style=flat&logo=github)](https://github.com/sebasBetancourt/streaming)
+
+Browse and watch around **10,000** movies, series and anime, rate and review them, and keep favorites and a personal watchlist, with an admin panel to curate the catalog.
+
+- **Fastify 5 + TypeScript API** with a layered architecture, Zod validation, JWT auth and Swagger docs.
+- **Catalog sync** with an external provider: a lock against concurrent runs, run history, dry-run mode and validation before writing.
+- **Security:** single-use, hashed, expiring password-reset tokens, rate limiting per IP and email, and Helmet.
+- **130+ automated tests** (Vitest) across the API and the frontend.
+
+<br/>
+
+## 🧰 Tech stack
+
+<p align="left">
+  <a href="https://portafolio-delta-fawn.vercel.app/">
+    <img src="https://skillicons.dev/icons?i=go,ts,nodejs,python,postgres,mongodb,redis,docker,nginx,linux,githubactions,git,react,nextjs,tailwind&perline=8" alt="Tech stack" />
+  </a>
 </p>
 
-<div align="center">
+<br/>
 
-## 📬 Contacto
-[![Gmail](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:s3basbetan@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sebastian-betancourt-605654293)
-[![Portfolio](https://img.shields.io/badge/Portfolio-562AA1?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-delta-fawn.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sebasBetancourt)
+<details>
+  <summary>📈 &ensp;<b>GitHub stats</b></summary>
+  <br/>
+  <div align="center">
+    <img height="165" src="https://github-readme-stats.vercel.app/api?username=sebasBetancourt&show_icons=true&count_private=true&include_all_commits=true&theme=transparent&hide_border=true&title_color=a855f7&icon_color=FF2D8D&text_color=9ca3af" alt="GitHub stats" />
+    <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sebasBetancourt&layout=compact&langs_count=8&theme=transparent&hide_border=true&title_color=a855f7&text_color=9ca3af" alt="Top languages" />
+    <br/>
+    <img src="https://streak-stats.demolab.com/?user=sebasBetancourt&theme=transparent&hide_border=true&ring=a855f7&fire=FF2D8D&currStreakLabel=a855f7" alt="GitHub streak" />
+  </div>
+</details>
 
-</div>
-
----
-
-## Sobre Mí ✨
-<img src='https://c.tenor.com/--AQwe1rA8EAAAAi/batman-pixel-art.gif' alt="batman" width="10%" align="right" />
-
-Desarrollador de software con formación técnica en programación del SENA, especializado en desarrollo web front-end y full-stack. Destacado por liderazgo, rápida capacidad de aprendizaje, adaptabilidad, creatividad y trabajo en equipo. He desarrollado proyectos personales y académicos que reflejan compromiso, habilidades técnicas y enfoque en mejora continua.
-
-Con experiencia en soporte técnico de sistemas, he fortalecido la responsabilidad, empatía y solución de problemas reales. Me caracterizo por orden, carisma y fuerte orientación a resultados, siempre enfocado en aportar valor y entregar soluciones funcionales, bien estructuradas y escalables.
-
----
-<div align = center>
-  
-## 🛠️ Technological Stack
-
-### 👁️ Frontend  
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" height="28"/>  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" height="28"/>  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" height="28"/>  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" height="28"/> 
-<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js" height="28"/>
-
-
-### ⚙️ Backend  
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" height="28"/> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" height="28"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" height="28"/> <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" height="28"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" height="28"/>
-
-### 🗄️ Database  
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" height="28"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" height="28"/>
-
-### 🔧 Tools & Methodologies  
-<img src="https://img.shields.io/badge/SCRUM-000000?style=for-the-badge&logo=scrumalliance&logoColor=white" alt="SCRUM" height="28"/> <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" height="28"/> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" height="28"/> <img src="https://img.shields.io/badge/Phaser-3B3B98?style=for-the-badge&logo=phaser&logoColor=white" alt="Phaser" height="28"/>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" height="28" />
-<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" height="28" />
-<img src="https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white" height="28" />
-<img src="https://img.shields.io/badge/Nuxt-00DC82?style=for-the-badge&logo=nuxt&logoColor=white" height="28" />
-<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" height="28" />
-<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" height="28" />
-
-</div>
-
-
----
-
-## Proyectos Destacados 📂
-
-Mis proyectos clave, en su mayoría colaborativos usando SCRUM, Conventional Commits y buenas prácticas Git. Incluyen documentación, instalación, uso y contribución. Aplican principios SOLID para escalabilidad
-
-### Edusync  
-- **Descripción**: Plataforma moderna y responsiva para la gestión académica de una institución educativa.
-- **Tecnologías**: Vue - Nuxt - Django - SQL - Tailwind - TypeScript  
-- **Repositorio**: [github.com/sebasBetancourt/Edusync](https://github.com/sebasBetancourt/Edusync)  
-
-### PelixFlIX  
-- **Descripción**: PelixFlix es una aplicación web full-stack diseñada para amantes del cine y series. La plataforma permite a los usuarios descubrir, calificar y reseñar películas y series, así como interactuar con las reseñas de otros usuarios mediante likes y dislikes
-
-- **Tecnologías**: React, Tailwind, Vite, Node.js, Express.js, JWT, MongoDB. 
-- **Repositorio BACKEND**: [github.com/sebasBetancourt/Pelixflix--backend](https://github.com/sebasBetancourt/Pelixflix--backend)  
-- **Repositorio FRONT-END**: [github.com/sebasBetancourt/streaming](https://github.com/sebasBetancourt/streaming)  
-
-- **Destacado**: Proyecto colaborativo con Mern.
-
-### OrbisProCLI  
-- **Descripción**: CLI para freelancers que organiza proyectos y clientes con CRUD personalizados.  
-- **Tecnologías**: JavaScript, MongoDB, Node.js, dotenv  
-- **Repositorio**: [github.com/sebasBetancourt/Orbis-ProCLI](https://github.com/sebasBetancourt/Orbis-ProCLI.git)  
-- **Destacado**: Interfaz CLI eficiente para gestión.
-
-### CampusParking  
-- **Descripción**: Gestión de parqueaderos con registro de vehículos en sedes, zonas y tipos.  
-- **Tecnologías**: JavaScript, MongoDB, SCRUM  
-- **Repositorio**: [github.com/sebasBetancourt/Campus-Parking](https://github.com/sebasBetancourt/Campus-Parking)  
-- **Destacado**: Aplicación de patrones de diseño y principios SOLID.
-
-### GameCampus  
-- **Descripción**: Plataforma web interactiva estilo Dungeons & Dragons para crear personajes personalizables.  
-- **Tecnologías**: JavaScript, APIs, SCRUM, HTML, CSS  
-- **Repositorio**: [github.com/julianort11/GameCampus](https://github.com/julianort11/GameCampus)  
-- **Destacado**: Proyecto colaborativo con integración de APIs y gamificación.
-
-| Proyecto      | Tecnologías Principales           | Enfoque                      | Colaborativo |
-| ------------- | -------------------------------- | ----------------------------| ------------ |
-| Edusync       | JS, Chart.js, MongoDB, Node.js   | APIs en tiempo real, Gráficos| Sí           |
-| OrbisProCLI   | JS, MongoDB, Node.js             | CLI y CRUDS                 | Sí           |
-| CampusParking | JS, MongoDB, SCRUM               | Gestión, SOLID              | Sí           |
-| GameCampus    | JS, APIs, HTML/CSS, SCRUM        | Interactividad, personalización | Sí        |
-| PelixFLix    | MERN, SCRUM        | Interactividad, personalización, Bases de Datos, Security | Sí        |
-
----
-
-## Documentación General 📚
-
-- **Instalación y Uso**: Cada proyecto cuenta con README detallado para clonar, instalar (`npm install` o similar) y ejecutar (`npm start`).  
-- **Colaboración**: ¡Bienvenido a contribuir! Usa ramas feature/ para nuevas funcionalidades. Sigue Conventional Commits: `feat:`, `fix:`, `docs:`.  
-- **Arquitectura**: Uso MVC donde aplica, principios SOLID, patrones como Singleton y Factory para código mantenible.  
-- **Licencia**: MIT – libre para usar y modificar.
-
----
-
-## Estadísticas de GitHub 📊
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=sebasBetancourt&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sebasBetancourt&layout=compact&theme=radical)
-
-
+<br/>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=562AA1&height=100&section=footer" width="100%" alt="Footer" />
+
+**[Portfolio](https://portafolio-delta-fawn.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/sebastian-betancourt-605654293) · [Email](mailto:s3basbetan@gmail.com)**
+
 </div>
