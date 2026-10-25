@@ -1,7 +1,7 @@
 <div align="center">
 
 [![Profile views](https://komarev.com/ghpvc/?username=sebasBetancourt&label=Profile%20views&color=a855f7&style=for-the-badge)](https://github.com/sebasBetancourt)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF2D8D?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-delta-fawn.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF2D8D?style=for-the-badge&logo=vercel&logoColor=white)](https://sebas-betancourt.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sebastian-betancourt-605654293)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:s3basbetan@gmail.com)
 
@@ -19,13 +19,13 @@
 
 ## ⭐ Featured projects
 
-### [Relay](https://github.com/sebasBetancourt/Relay) · One API for Google Calendar and Outlook
+### [Relay](https://github.com/sebasBetancourt/Relay) · One API for multiple providers — Calendar
 
 [![CI](https://github.com/sebasBetancourt/Relay/actions/workflows/ci.yml/badge.svg)](https://github.com/sebasBetancourt/Relay/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/sebasBetancourt/Relay)](https://github.com/sebasBetancourt/Relay/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/sebasBetancourt/Relay/blob/main/LICENSE)
 
-Your users connect their Google or Microsoft account once; Relay handles OAuth, keeps their tokens encrypted and fresh, and returns their events in a single shape, whatever the provider.
+Your users connect their account once; Relay handles OAuth, keeps their tokens encrypted and fresh, and returns their data in a single shape, whatever the provider. The current release covers **calendars**, built primarily for **Google Calendar** and **Outlook**.
 
 - **OAuth 2.0 + PKCE** for Google and Microsoft Entra, with single-use state and scope checks.
 - **Token vault** with AES-256-GCM and AAD: every token is bound to its tenant, account and column.
@@ -51,7 +51,7 @@ Browse and watch around **10,000** movies, series and anime, rate and review the
 ## 🧰 Tech stack
 
 <p align="left">
-  <a href="https://portafolio-delta-fawn.vercel.app/">
+  <a href="https://sebas-betancourt.vercel.app/">
     <img src="https://skillicons.dev/icons?i=go,ts,nodejs,python,postgres,mongodb,redis,docker,nginx,linux,githubactions,git,react,nextjs,tailwind&perline=8" alt="Tech stack" />
   </a>
 </p>
@@ -73,6 +73,6 @@ Browse and watch around **10,000** movies, series and anime, rate and review the
 
 <div align="center">
 
-**[Portfolio](https://portafolio-delta-fawn.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/sebastian-betancourt-605654293) · [Email](mailto:s3basbetan@gmail.com)**
+**[Portfolio](https://sebas-betancourt.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/sebastian-betancourt-605654293) · [Email](mailto:s3basbetan@gmail.com)**
 
 </div>
