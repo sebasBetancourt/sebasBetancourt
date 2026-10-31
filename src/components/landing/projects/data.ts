@@ -25,6 +25,7 @@ export type Project = {
   };
   links?: {
     demo?: string;
+    docs?: string;
     frontend?: string;
     backend?: string;
     repo?: string;
@@ -71,37 +72,31 @@ const PROJECTS_ES: Project[] = [
   {
     title: "Relay",
     status: "live",
-    description: "API open source en Go que unifica Google Calendar y Outlook: tus usuarios conectan su cuenta una vez y Relay maneja OAuth, guarda los tokens cifrados, los refresca solo y devuelve los eventos en un mismo formato, sea cual sea el proveedor. Publicada como v0.1.0.",
+    description: "Una API para el calendario de Google y el de Outlook. La persona conecta su cuenta una vez; a partir de ahí lees, creas, editas y borras sus eventos con la misma llamada, sea cual sea el proveedor. Relay guarda el acceso, cifra los tokens y los mantiene al día.",
     features: [
-      "OAuth 2.0 con PKCE para Google y Microsoft Entra, con state de un solo uso que vence a los 10 minutos y verificación de scopes en el callback.",
-      "Bóveda de tokens con AES-256-GCM y AAD: cada token queda atado a su tenant, su cuenta y su columna; la clave nunca toca la base de datos.",
-      "API keys por tenant (rly_live_ / rly_test_ con checksum): solo se guarda el hash, el 401 es idéntico para cualquier error y la llave nunca se loguea.",
-      "API de eventos unificada con refresh silencioso, rotación del refresh token segura entre réplicas (lock de fila en Postgres), zonas de Windows a IANA y paginación neutral contra SSRF.",
-      "170 tests, incluida una suite e2e contra Google y Microsoft falsos con estado; release con GoReleaser, imagen en GHCR, govulncheck, Dependabot y OpenAPI 3.1.",
-    ],
-    roadmap: [
-      { label: "Google: OAuth, bóveda de tokens y eventos", done: true },
-      { label: "Microsoft Graph + API unificada (v0.1.0)", done: true },
-      { label: "Cambios en tiempo real + delta sync", done: false },
-      { label: "Webhooks de salida + SDK en TypeScript", done: false },
-      { label: "Observabilidad y pruebas de carga", done: false },
+      "Conexión con OAuth 2.0 y PKCE en Google y en Microsoft, incluidas cuentas de trabajo, escuela y personales. Los tokens quedan cifrados y se renuevan solos.",
+      "Lectura y escritura del calendario principal en un solo formato: eventos, series recurrentes y zonas horarias. Reintentar una escritura no la duplica.",
+      "Cuando el calendario cambia, Relay recibe el aviso de Google o de Microsoft y aplica solo lo nuevo.",
+      "Cada cliente tiene sus propias API keys y su cupo de peticiones. La referencia de la API está publicada y sale del contrato OpenAPI.",
     ],
     techStack: [
       { name: "Go", icon: SiGo, color: "#00ADD8" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
-      { name: "OAuth 2.0", icon: SiGoogle, color: "#4285F4" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+      { name: "NATS", icon: SiNatsdotio, color: "#27AAE1" },
+      { name: "Google Calendar", icon: SiGoogle, color: "#4285F4" },
       { name: "Microsoft Graph", icon: FaMicrosoft, color: "#00A4EF" },
       { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
-      { name: "GoReleaser", icon: SiGo, color: "#00ADD8" },
       { name: "OpenAPI", icon: SiOpenapiinitiative, color: "#6BA539" },
+      { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
     ],
     visual: {
       title: "Una API para los calendarios de Google y Outlook",
       bgColor: "bg-[#1e3a8a]",
-      image: "/img/relay/architecture.svg",
+      image: "/relay.png",
     },
     links: {
+      docs: "https://sebasbetancourt.github.io/Relay/",
       repo: "https://github.com/sebasBetancourt/Relay",
     },
   },
@@ -157,20 +152,12 @@ const PROJECTS_EN_TEXT: LocalizedFields[] = [
     visualTitle: "Watch and review movies, series and anime",
   },
   {
-    description: "Open source Go API that unifies Google Calendar and Outlook: your users connect their account once and Relay handles OAuth, keeps their tokens encrypted and fresh, and returns events in a single shape, whatever the provider. Released as v0.1.0.",
+    description: "One API for Google Calendar and Outlook. A person connects their account once; from then on you read, create, edit and delete their events with the same call, whichever provider they use. Relay stores the access, encrypts the tokens and keeps them fresh.",
     features: [
-      "OAuth 2.0 with PKCE for Google and Microsoft Entra, with a single-use state that expires after 10 minutes and scope checks on the callback.",
-      "Token vault with AES-256-GCM and AAD: every token is bound to its tenant, account and column; the key never touches the database.",
-      "Per-tenant API keys (rly_live_ / rly_test_ with checksum): only the hash is stored, the 401 is identical for every failure and keys are never logged.",
-      "Unified events API with silent refresh, refresh-token rotation that is safe across replicas (Postgres row lock), Windows-to-IANA time zones and SSRF-safe provider-neutral pagination.",
-      "170 tests, including an e2e suite against stateful fake Google and Microsoft servers; releases with GoReleaser, a GHCR image, govulncheck, Dependabot and OpenAPI 3.1.",
-    ],
-    roadmap: [
-      { label: "Google: OAuth, token vault and events", done: true },
-      { label: "Microsoft Graph + unified API (v0.1.0)", done: true },
-      { label: "Real-time changes + delta sync", done: false },
-      { label: "Outbound webhooks + TypeScript SDK", done: false },
-      { label: "Observability and load testing", done: false },
+      "Connect with OAuth 2.0 and PKCE on Google and Microsoft, including work, school and personal accounts. Tokens are encrypted and refresh on their own.",
+      "Read and write the primary calendar in one shape: single events, recurring series and time zones. Retrying a write does not create a duplicate.",
+      "When the calendar changes, Relay gets the notice from Google or Microsoft and applies only what is new.",
+      "Each customer gets their own API keys and their own request budget. The API reference is published from the OpenAPI contract.",
     ],
     visualTitle: "One API for Google and Outlook calendars",
   },

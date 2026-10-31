@@ -31,6 +31,15 @@ export function ArrowRightIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+export function DocsIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    </svg>
+  );
+}
+
 export function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -53,8 +62,7 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
       setFlipped((value) => !value);
       return;
     }
-    // Abre la demo; si no hay demo, el repo (proyectos publicados sin demo, como Relay)
-    const target = project.links?.demo ?? (project.status === "in-progress" ? undefined : project.links?.repo);
+    const target = project.links?.demo ?? project.links?.docs ?? (project.status === "in-progress" ? undefined : project.links?.repo);
     if (target) window.open(target, "_blank", "noopener,noreferrer");
   };
 
@@ -97,9 +105,11 @@ export function ProjectVisual({ project, index }: { project: Project; index: num
                 <textPath href="#circlePath" startOffset="0%">
                   {project.links?.demo
                     ? `${t.projects.details} • ${t.projects.details} •`
-                    : project.status === "in-progress"
-                      ? `${t.projects.building} • ${t.projects.building} •`
-                      : `${t.projects.viewRepo} • ${t.projects.viewRepo} •`}
+                    : project.links?.docs
+                      ? `${t.projects.viewDocs} • ${t.projects.viewDocs} •`
+                      : project.status === "in-progress"
+                        ? `${t.projects.building} • ${t.projects.building} •`
+                        : `${t.projects.viewRepo} • ${t.projects.viewRepo} •`}
                 </textPath>
               </text>
             </svg>
@@ -244,6 +254,12 @@ function ProjectTextInner({ project }: { project: Project }) {
               <a href={project.links.demo} target="_blank" rel="noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-neutral-200 transition-colors">
                 <EyeIcon className="w-4 h-4" />
                 <span>{t.projects.demo}</span>
+              </a>
+            )}
+            {project.links.docs && (
+              <a href={project.links.docs} target="_blank" rel="noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-neutral-200 transition-colors">
+                <DocsIcon className="w-4 h-4" />
+                <span>{t.projects.docs}</span>
               </a>
             )}
             {project.links.repo && (
